@@ -84,7 +84,7 @@ jobs:
       # tables would fail on the first CREATE TABLE and prove only that.
       - name: Create Neon branch
         id: neon-branch
-        uses: neondatabase/create-branch-action@v5
+        uses: neondatabase/create-branch-action@v6
         with:
           project_id: ${{ secrets.NEON_PROJECT_ID }}
           parent: ${{ secrets.NEON_PARENT_BRANCH_ID }}
