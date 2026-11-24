@@ -33,7 +33,7 @@
     "@tiptap/pm": "^3.0.0",
     "@tiptap/react": "^3.0.0",
     "@tiptap/starter-kit": "^3.0.0",
-    "date-fns": "^4.1.0",
+    "date-fns": "^4.4.0",
     "framer-motion": "^12.23.0",
     "i18next": "^23.16.0",
     "i18next-browser-languagedetector": "^8.0.0",
