@@ -21,7 +21,7 @@ jobs:
   typecheck:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@v7
       - uses: actions/setup-node@v5
         with:
           node-version: '20'
@@ -32,7 +32,7 @@ jobs:
   lint:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@v7
       - uses: actions/setup-node@v5
         with:
           node-version: '20'
@@ -46,7 +46,7 @@ jobs:
       DATABASE_URL: postgres://x@y/z
       DATABASE_URL_DIRECT: postgres://x@y/z
     steps:
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@v7
       - uses: actions/setup-node@v5
         with:
           node-version: '20'
@@ -57,7 +57,7 @@ jobs:
   unit-web:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@v7
       - uses: actions/setup-node@v5
         with:
           node-version: '20'
@@ -84,7 +84,7 @@ jobs:
       DATABASE_URL_DIRECT: postgres://crm:crm@localhost:5432/crm_test
       TEST_DATABASE_URL: postgres://crm:crm@localhost:5432/crm_test
     steps:
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@v7
       - uses: actions/setup-node@v5
         with:
           node-version: '20'
@@ -120,7 +120,7 @@ jobs:
       NODE_ENV: test
       PORT: '8080'
     steps:
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@v7
       - uses: actions/setup-node@v5
         with:
           node-version: '20'

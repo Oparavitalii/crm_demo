@@ -41,7 +41,7 @@ jobs:
       R2_SECRET_KEY: ${{ secrets.R2_SECRET_KEY }}
       R2_BUCKET: ${{ secrets.R2_BUCKET }}
     steps:
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@v7
       - uses: actions/setup-node@v5
         with:
           # 22, not the 20 the test jobs use: this is the only workflow that
