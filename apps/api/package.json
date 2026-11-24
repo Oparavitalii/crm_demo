@@ -39,7 +39,7 @@
     "drizzle-orm": "^0.45.2",
     "exceljs": "^4.4.0",
     "hono": "^4.6.0",
-    "hono-rate-limiter": "^0.4.0",
+    "hono-rate-limiter": "^0.5.4",
     "jose": "^5.9.0",
     "otplib": "^13.4.0",
     "pg": "^8.13.0",
