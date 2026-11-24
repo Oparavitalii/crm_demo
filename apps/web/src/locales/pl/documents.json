@@ -1,0 +1,51 @@
+{
+  "title": "Dokumenty",
+  "subtitle": "Regulaminy, procedury i polityki CRM Demo",
+  "categories": {
+    "regulamin": "Regulaminy",
+    "rodo": "RODO",
+    "procedura": "Procedury",
+    "polityka": "Polityki",
+    "inne": "Inne"
+  },
+  "list": {
+    "empty": "Brak dokumentów w tej kategorii",
+    "requiresAcceptance": "Wymaga akceptacji",
+    "accepted": "Zaakceptowano",
+    "version": "Wersja {{n}}"
+  },
+  "actions": {
+    "acceptAndContinue": "Zapoznałem(am) się i akceptuję",
+    "openFile": "Otwórz plik",
+    "edit": "Edytuj",
+    "delete": "Usuń",
+    "publish": "Opublikuj",
+    "createMd": "Nowy (Markdown)",
+    "createFile": "Nowy (PDF)",
+    "exportCsv": "Eksport CSV"
+  },
+  "pending": {
+    "title": "Wymagane akceptacje",
+    "subtitle": "Aby kontynuować, zapoznaj się z poniższymi dokumentami i zaakceptuj ich aktualną wersję."
+  },
+  "admin": {
+    "title": "Zarządzanie dokumentami",
+    "form": {
+      "slug": "Identyfikator (slug)",
+      "slugHelp": "lowercase, słowa rozdzielone myślnikiem",
+      "titleField": "Tytuł",
+      "category": "Kategoria",
+      "contentMd": "Treść (Markdown)",
+      "file": "Plik PDF",
+      "requiresAcceptance": "Wymaga akceptacji",
+      "visibleToRoles": "Widoczne dla ról"
+    },
+    "acceptances": {
+      "title": "Akceptacje dokumentu",
+      "empty": "Nikt jeszcze nie zaakceptował tego dokumentu"
+    }
+  },
+  "profile": {
+    "myAcceptances": "Moje akceptacje dokumentów"
+  }
+}

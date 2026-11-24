@@ -1,0 +1,51 @@
+{
+  "list": {
+    "title": "Projekty",
+    "add": "Dodaj projekt",
+    "empty": "Brak projektów. Dodaj pierwszy.",
+    "search": "Szukaj po nazwie…",
+    "showInactive": "Pokaż nieaktywne",
+    "sortBy": "Sortowanie:",
+    "sortAsc": "Rosnąco",
+    "sortDesc": "Malejąco"
+  },
+  "sort": {
+    "startDate": "Data startu",
+    "createdAt": "Data utworzenia",
+    "name": "Nazwa (A-Z)"
+  },
+  "fields": {
+    "name": "Nazwa",
+    "isActive": "Aktywny",
+    "createdAt": "Utworzono",
+    "startDate": "Data startu",
+    "headcountNeeded": "Potrzebne",
+    "foundCount": "Znaleziono",
+    "missingCount": "Brakuje",
+    "percentFilled": "%"
+  },
+  "badge": {
+    "active": "aktywny",
+    "inactive": "nieaktywny"
+  },
+  "actions": "Akcje",
+  "createTitle": "Nowy projekt",
+  "editTitle": "Edytuj projekt",
+  "created": "Projekt dodany",
+  "updated": "Projekt zaktualizowany",
+  "deleted": "Projekt usunięty",
+  "form": {
+    "save": "Zapisz",
+    "cancel": "Anuluj",
+    "nameRequired": "Nazwa wymagana"
+  },
+  "delete": {
+    "confirm": "Usunąć ten projekt?",
+    "button": "Usuń"
+  },
+  "errors": {
+    "duplicate": "Projekt o tej nazwie już istnieje",
+    "hasReferences": "Projekt jest używany przez kandydatów — oznacz jako nieaktywny zamiast usuwania",
+    "generic": "Wystąpił błąd"
+  }
+}

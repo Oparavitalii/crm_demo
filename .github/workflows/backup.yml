@@ -1,0 +1,88 @@
+name: Daily backup
+
+# Schedules apps/api/src/jobs/backup.ts: pg_dump -> gzip -> AES-256-GCM ->
+# upload to R2, 30-day retention. Runs on a GitHub runner rather than the
+# 256 MB Fly cron machine — runBackup() buffers the whole gzipped dump (and
+# again during the ciphertext concat), and a runner has RAM to spare plus a
+# visible audit trail in the Actions tab.
+# PUBLIC DEMO: kept as a reference implementation. The schedule is removed
+# because the demo database is rebuilt every night anyway (DEMO_MODE reset) and
+# this repository holds no storage secrets. A real deployment re-adds:
+#   schedule:
+#     - cron: '0 2 * * *'   # 02:00 UTC
+# and sets the secrets referenced below in the repository settings.
+on:
+  workflow_dispatch:
+
+jobs:
+  backup:
+    runs-on: ubuntu-latest
+    env:
+      # env.ts parses the full env schema on import, and DATABASE_URL /
+      # JWT_SECRET / JWT_REFRESH_SECRET are required (no default) even though
+      # jobs/backup.ts itself only touches DATABASE_URL_DIRECT. Same dummy
+      # pattern as the unit-api job in test.yml — not secrets, just
+      # schema-satisfying placeholders.
+      DATABASE_URL: postgres://x@y/z
+      JWT_SECRET: aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+      JWT_REFRESH_SECRET: bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
+      # Repository secrets (none are configured in the public demo).
+      DATABASE_URL_DIRECT: ${{ secrets.DATABASE_URL_DIRECT }}
+      BACKUP_ENCRYPTION_KEY: ${{ secrets.BACKUP_ENCRYPTION_KEY }}
+      # Literal, NOT a secret. R2's region is always "auto", and env.ts defaults
+      # it to that — but a Zod .default() only fires on `undefined`, and GitHub
+      # renders a missing secret as an empty string, which IS defined. So
+      # `${{ secrets.R2_REGION }}` with the secret unset would set R2_REGION=""
+      # and the job would die at S3Client construction with "Region is missing"
+      # before pg_dump ever ran. Verified 2026-07-30.
+      R2_REGION: auto
+      R2_ENDPOINT: ${{ secrets.R2_ENDPOINT }}
+      R2_ACCESS_KEY: ${{ secrets.R2_ACCESS_KEY }}
+      R2_SECRET_KEY: ${{ secrets.R2_SECRET_KEY }}
+      R2_BUCKET: ${{ secrets.R2_BUCKET }}
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v5
+        with:
+          # 22, not the 20 the test jobs use: this is the only workflow that
+          # RUNS the compiled bundle rather than the TS source, esbuild targets
+          # node22 (scripts/build.mjs), and production is node:22-alpine
+          # (apps/api/Dockerfile). The artifact should execute on the same
+          # major it was built for.
+          node-version: '22'
+          cache: 'npm'
+
+      - name: Install postgresql-client-17 (PGDG)
+        # Neon runs Postgres 17. pg_dump refuses to dump a server newer than
+        # itself, and ubuntu-latest's default postgresql-client is older —
+        # this fails the very first scheduled run if skipped.
+        #
+        # Installing the package is NOT enough, which run #4 proved: PGDG puts
+        # its binaries in /usr/lib/postgresql/17/bin, while the runner image
+        # already owns /usr/bin/pg_dump at version 16. apt succeeded, PATH did
+        # not change, and pg_dump still aborted with "server version mismatch:
+        # server 17.10, pg_dump 16.14". $GITHUB_PATH prepends, so the 17 binary
+        # wins in every later step.
+        #
+        # `pg_dump --version` is echoed on purpose: when this breaks again
+        # after some future runner-image change, the version is right there in
+        # the log instead of having to be inferred from a crash.
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y postgresql-common
+          sudo /usr/share/postgresql-common/pgdg/apt.postgresql.org.sh -y
+          sudo apt-get install -y postgresql-client-17
+          echo "/usr/lib/postgresql/17/bin" >> "$GITHUB_PATH"
+
+      - name: Confirm pg_dump is version 17
+        run: pg_dump --version
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build
+        run: npm run build:prod -w @crm/api
+
+      - name: Run backup
+        working-directory: apps/api
+        run: node dist/jobs/backup.js

@@ -1,0 +1,28 @@
+{
+  "title": "Звіт: невдалі кандидати",
+  "total": "Всього: {{count}}",
+  "empty": "Немає невдалих кандидатів",
+  "exportCsv": "Експорт CSV",
+  "filters": {
+    "search": "Пошук",
+    "searchPlaceholder": "Ім'я або прізвище",
+    "project": "Проєкт",
+    "allProjects": "Усі проєкти",
+    "recruiter": "Рекрутер",
+    "allRecruiters": "Усі рекрутери",
+    "coordinator": "Координатор",
+    "allCoordinators": "Усі координатори",
+    "noShowReason": "Причина нездачі",
+    "allReasons": "Усі причини",
+    "dateRange": "Період"
+  },
+  "fields": {
+    "candidate": "Кандидат",
+    "project": "Проєкт",
+    "recruiter": "Рекрутер",
+    "coordinator": "Координатор",
+    "reason": "Причина нездачі",
+    "status": "Статус",
+    "markedAt": "Дата позначки"
+  }
+}

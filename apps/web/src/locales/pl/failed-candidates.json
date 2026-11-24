@@ -1,0 +1,28 @@
+{
+  "title": "Raport: kandydaci, którzy nie dotarli",
+  "total": "Łącznie: {{count}}",
+  "empty": "Brak nieudanych kandydatów",
+  "exportCsv": "Eksport CSV",
+  "filters": {
+    "search": "Szukaj",
+    "searchPlaceholder": "Imię lub nazwisko",
+    "project": "Projekt",
+    "allProjects": "Wszystkie projekty",
+    "recruiter": "Rekruter",
+    "allRecruiters": "Wszyscy rekruterzy",
+    "coordinator": "Koordynator",
+    "allCoordinators": "Wszyscy koordynatorzy",
+    "noShowReason": "Powód niedotarcia",
+    "allReasons": "Wszystkie powody",
+    "dateRange": "Zakres dat"
+  },
+  "fields": {
+    "candidate": "Kandydat",
+    "project": "Projekt",
+    "recruiter": "Rekruter",
+    "coordinator": "Koordynator",
+    "reason": "Powód niedotarcia",
+    "status": "Status",
+    "markedAt": "Data oznaczenia"
+  }
+}

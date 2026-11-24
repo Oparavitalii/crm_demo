@@ -1,0 +1,9 @@
+{
+  "generic": "Coś poszło nie tak. Spróbuj ponownie.",
+  "network": "Brak połączenia z serwerem. Sprawdź internet i spróbuj ponownie.",
+  "offline": "Jesteś offline — zmiany nie zostały zapisane. Przywróć internet i spróbuj ponownie.",
+  "forbidden": "Nie masz uprawnień do tej strony.",
+  "notFound": "Strona nie istnieje.",
+  "sessionExpired": "Sesja wygasła — zaloguj się ponownie.",
+  "home": "Strona główna"
+}

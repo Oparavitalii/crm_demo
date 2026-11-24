@@ -1,0 +1,135 @@
+name: Restore drill
+
+# PUBLIC DEMO: reference implementation only — it needs the backup bucket and
+# Neon API secrets of a real deployment, none of which exist in this repo.
+#
+# Proves the backups are restorable, which is the only property of a backup
+# that matters and the one nobody checks. Takes the newest object written by
+# .github/workflows/backup.yml, decrypts it, applies it to a throwaway Neon
+# branch, and fails if any table comes back with a different row count than
+# the dump carried.
+#
+# Everything happens inside your own Neon project and your own CI. The
+# decrypted dump is production personal data and never leaves the runner —
+# it is not uploaded as an artifact, and the runner is destroyed after the
+# job. Do not add an upload-artifact step for it.
+#
+# Manual only, on purpose: it restores real personal data into a real (if
+# short-lived) database, and that should be a decision someone makes, not
+# something that happens at 3am. Add a `schedule:` here if you would rather
+# it ran monthly — the branch cleanup is already unconditional.
+on:
+  workflow_dispatch:
+    inputs:
+      object_key:
+        description: 'R2 object key to restore, or "latest"'
+        required: false
+        default: 'latest'
+
+jobs:
+  drill:
+    runs-on: ubuntu-latest
+    env:
+      # Schema-satisfying placeholders — env.ts parses the WHOLE schema on
+      # import, so every required field has to be present even though the
+      # restore job touches none of them. DATABASE_URL_DIRECT is required too
+      # and is easy to forget precisely because this job never connects to a
+      # database: run #1 died here with `DATABASE_URL_DIRECT: "Required"`.
+      # The real connection string for the drill is passed per-step from the
+      # Neon branch output, never from here.
+      DATABASE_URL: postgres://x@y/z
+      DATABASE_URL_DIRECT: postgres://x@y/z
+      JWT_SECRET: aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+      JWT_REFRESH_SECRET: bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
+      BACKUP_ENCRYPTION_KEY: ${{ secrets.BACKUP_ENCRYPTION_KEY }}
+      R2_REGION: auto
+      R2_ENDPOINT: ${{ secrets.R2_ENDPOINT }}
+      R2_ACCESS_KEY: ${{ secrets.R2_ACCESS_KEY }}
+      R2_SECRET_KEY: ${{ secrets.R2_SECRET_KEY }}
+      R2_BUCKET: ${{ secrets.R2_BUCKET }}
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v5
+        with:
+          node-version: '22'
+          cache: 'npm'
+
+      - name: Install postgresql-client-17 (PGDG)
+        # Same trap as backup.yml: installing the package is not enough,
+        # /usr/bin/psql belongs to the image's version 16 until PATH says
+        # otherwise.
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y postgresql-common
+          sudo /usr/share/postgresql-common/pgdg/apt.postgresql.org.sh -y
+          sudo apt-get install -y postgresql-client-17
+          echo "/usr/lib/postgresql/17/bin" >> "$GITHUB_PATH"
+
+      - name: Confirm psql is version 17
+        run: psql --version
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build
+        run: npm run build:prod -w @crm/api
+
+      - name: Decrypt the backup
+        working-directory: apps/api
+        run: node dist/jobs/restore.js "${{ inputs.object_key || 'latest' }}" /tmp/drill.sql
+
+      # Branched from production and then emptied, rather than branched from
+      # somewhere already empty: this way the drill also proves the dump can
+      # rebuild the schema from nothing. A branch that still holds production's
+      # tables would fail on the first CREATE TABLE and prove only that.
+      - name: Create Neon branch
+        id: neon-branch
+        uses: neondatabase/create-branch-action@v5
+        with:
+          project_id: ${{ secrets.NEON_PROJECT_ID }}
+          parent: ${{ secrets.NEON_PARENT_BRANCH_ID }}
+          branch_name: drill-${{ github.run_id }}
+          api_key: ${{ secrets.NEON_API_KEY }}
+
+      - name: Empty the branch
+        env:
+          TARGET: ${{ steps.neon-branch.outputs.db_url }}
+        run: |
+          psql "$TARGET" -v ON_ERROR_STOP=1 -c '
+            DROP SCHEMA IF EXISTS drizzle CASCADE;
+            DROP SCHEMA IF EXISTS public CASCADE;
+            CREATE SCHEMA public;
+          '
+
+      # ON_ERROR_STOP=1 is the whole point of this step. Without it psql prints
+      # errors, carries on, and exits 0 — the drill would go green over a
+      # restore that half-failed, which is worse than never running it.
+      - name: Apply the dump
+        env:
+          TARGET: ${{ steps.neon-branch.outputs.db_url }}
+        run: psql "$TARGET" -v ON_ERROR_STOP=1 -q -f /tmp/drill.sql
+
+      - name: Compare row counts against the dump
+        env:
+          DATABASE_URL_DIRECT: ${{ steps.neon-branch.outputs.db_url }}
+        run: node apps/api/scripts/verify-restore.mjs /tmp/drill.sql
+
+      # always() — the branch is a full copy of candidates' personal data and
+      # carries the same RODO obligations as production. It gets deleted
+      # whether the drill passed, failed, or the job was cancelled.
+      #
+      # Guarded on the create step actually having succeeded: when an earlier
+      # step fails, there is no branch, and an unconditional delete just adds a
+      # second red X that hides the real one. Deleting must still happen on
+      # every path where a branch EXISTS — do not weaken this to `success()`.
+      - name: Delete Neon branch
+        if: always() && steps.neon-branch.outcome == 'success'
+        uses: neondatabase/delete-branch-action@v3
+        with:
+          project_id: ${{ secrets.NEON_PROJECT_ID }}
+          branch: drill-${{ github.run_id }}
+          api_key: ${{ secrets.NEON_API_KEY }}
+
+      - name: Shred the decrypted dump
+        if: always()
+        run: shred -u /tmp/drill.sql 2>/dev/null || rm -f /tmp/drill.sql

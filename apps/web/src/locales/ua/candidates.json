@@ -1,0 +1,378 @@
+{
+  "list": {
+    "title": "Кандидати",
+    "titleClients": "Клієнти",
+    "titleAll": "Всі (кандидати + клієнти)",
+    "add": "Додати кандидата",
+    "addClient": "Додати клієнта",
+    "search": "Пошук (ім'я, email, телефон)",
+    "filters": {
+      "all": "Всі",
+      "allProjects": "Всі проєкти",
+      "allLegalStatuses": "Усі правові статуси",
+      "allPositions": "Усі посади",
+      "allRecruiters": "Усі рекрутери",
+      "allSources": "Всі джерела",
+      "allStatuses": "Всі статуси",
+      "reconciliationPeriodPlaceholder": "Фільтр по періоду звірки",
+      "apply": "Застосувати",
+      "clearAll": "Очистити",
+      "dateRange": "Період",
+      "drawerTitle": "Фільтри",
+      "duplicatesOnly": "Тільки дублікати",
+      "freelancer": "Фрілансер",
+      "freelancerAll": "Усі фрілансери",
+      "hasEmail": "Email",
+      "hasPhone": "Телефон",
+      "no": "Ні",
+      "noProjects": "Немає проєктів",
+      "openButton": "Фільтри",
+      "recruiter": "Рекрутер",
+      "source": "Джерело",
+      "status": "Статус",
+      "consentAll": "Згода (усі)",
+      "consentRodo": "Є RODO-згода",
+      "consentEmail": "Є згода на email",
+      "consentSms": "Є згода на SMS",
+      "consentAny": "Будь-яка згода",
+      "consentNone": "Без згоди",
+      "yes": "Так"
+    },
+    "empty": "Немає клієнтів",
+    "total": "Всього: {{count}}",
+    "duplicateColumn": "Дублікат",
+    "duplicateTooltip": "Виявлено дублікат — цей клієнт вже є в базі (email, телефон або ім'я + прізвище)",
+    "viewToggle": {
+      "list": "Список",
+      "kanban": "Канбан"
+    },
+    "selectRow": "Виділити рядок"
+  },
+  "fields": {
+    "firstName": "Ім'я",
+    "lastName": "Прізвище",
+    "fullName": "Ім'я та прізвище",
+    "email": "Email",
+    "phone": "Телефон",
+    "birthDate": "Дата народження",
+    "nationality": "Громадянство",
+    "workStartDate": "Дата початку роботи",
+    "workEndDate": "Дата закінчення роботи",
+    "workEndReason": "Причина закінчення роботи",
+    "reasonNote": "Нотатка до причини (вільний текст)",
+    "status": "Статус",
+    "source": "Джерело",
+    "recruiter": "Рекрутер",
+    "project": "Проєкт",
+    "projectName": "Назва проєкту",
+    "coordinator": "Координатор",
+    "kind": "Тип картки",
+    "notes": "Нотатки",
+    "createdAt": "Додано",
+    "housing": "Житло",
+    "submittedToVacancy": "Поданий на вакансію",
+    "position": "Посада",
+    "legalStatus": "Статус документів",
+    "reconciliationPeriod": "Період звірки",
+    "consent": "Згода",
+    "documentsSubmittedAt": "Дата подачі документів",
+    "arrivedAt": "Дата приїзду",
+    "workOutcome": "Підсумок відпрацювання",
+    "payoutStatus": "Підсумок виплати",
+    "paymentStatus": "Виплачено",
+    "retention": "Утримання кандидата",
+    "messenger": "Месенджер (TG/WA/Viber)",
+    "messengerPlaceholder": "TG: @username · WA: +48… · Viber: +380…",
+    "experience": "Досвід роботи",
+    "experiencePlaceholder": "Наприклад: 2 роки на заводі в Польщі, 1 рік водієм…",
+    "kind": "Тип",
+    "externalId": "External ID",
+    "cvUrl": "CV",
+    "photoUrl": "Фото",
+    "updatedAt": "Оновлено",
+    "consentId": "Згода",
+    "processingRestricted": "Обмеження обробки",
+    "anonymizedAt": "Анонімізовано"
+  },
+  "kind": {
+    "candidate": "Кандидат",
+    "client": "Клієнт"
+  },
+  "arrivalStatus": {
+    "arrived": "Приїхав",
+    "no_show": "Не приїхав"
+  },
+  "lookup": {
+    "add": "+ Додати нову",
+    "addTitle": "Нове значення — {{field}}",
+    "labelPl": "Назва (PL)",
+    "labelUa": "Назва (UA)",
+    "errors": {
+      "bothLabelsRequired": "Заповніть обидві назви"
+    }
+  },
+  "directory": {
+    "inactive": " (неактивний)"
+  },
+  "comments": {
+    "title": "Коментарі",
+    "placeholder": "Напиши коментар…",
+    "submit": "Додати коментар",
+    "empty": "Немає коментарів",
+    "deleteConfirm": "Видалити цей коментар?",
+    "deleted": "Коментар видалено",
+    "created": "Коментар додано",
+    "unknownAuthor": "Невідомий автор",
+    "importedAuthor": "Імпортовано",
+    "bodyRequired": "Текст обов'язковий"
+  },
+  "housing": {
+    "our": "Наше",
+    "own": "Своє"
+  },
+  "consent": {
+    "title": "Згода на розсилку",
+    "caption": "Зафіксуйте, що кандидат дав згоду офлайн (усно або на папері). Це лише створює запис згоди — жодне повідомлення не надсилається.",
+    "email": "Згода на email-розсилку",
+    "sms": "Згода на SMS-розсилку",
+    "basis": "Підстава згоди",
+    "basisPlaceholder": "Оберіть підставу…",
+    "basisRequired": "Оберіть підставу згоди",
+    "manual_verbal": "Усно / по телефону",
+    "manual_paper": "Підписано на папері",
+    "sectionTitle": "Статус згод",
+    "rodoShort": "RODO",
+    "emailShort": "Email",
+    "smsShort": "SMS",
+    "rodoOn": "Є RODO-згода (обробка даних)",
+    "rodoOff": "Немає RODO-згоди — підстава обробки не задокументована",
+    "emailOn": "Є згода на email-розсилку",
+    "emailOff": "Немає згоди на email-розсилку",
+    "smsOn": "Є згода на SMS-розсилку",
+    "smsOff": "Немає згоди на SMS-розсилку",
+    "recordButton": "Записати згоду",
+    "recordSubmit": "Записати",
+    "recorded": "Згоду записано",
+    "copyLinkButton": "Скопіювати лінк згоди",
+    "linkCopied": "Лінк згоди скопійовано в буфер обміну",
+    "linkCopyFailed": "Не вдалося скопіювати автоматично — ось лінк",
+    "sendButton": "Надіслати підтвердження на email",
+    "sendSuccess": "Лист надіслано",
+    "noEmail": "немає email",
+    "adminButton": "Змінити згоду (адмін)",
+    "adminCaption": "Зміна логується.",
+    "adminSave": "Зберегти",
+    "adminSaved": "Згоду оновлено"
+  },
+  "recruiterType": {
+    "freelance": "Фрілансер",
+    "staff": "Наш"
+  },
+  "lifecycle": {
+    "title": "Етапи",
+    "documents": "Документи подані",
+    "documentsPending": "Не подано",
+    "arrived": "Доїхав",
+    "noShow": "Не доїхав",
+    "arrivalPending": "Очікує",
+    "housing": "Житло",
+    "ourHousing": "Наше",
+    "ownHousing": "Своє",
+    "housingPending": "Не вибрано",
+    "project": "Проект",
+    "projectPending": "Не вибрано",
+    "departure": "Виїзд",
+    "departurePending": "Не вибрано",
+    "employment": "Робота",
+    "employedSince": "Працює з",
+    "reEmployedSince": "Повторно з",
+    "dismissedOn": "Звільнений",
+    "blacklistedOn": "Чорний список",
+    "employmentPending": "Ще не працює"
+  },
+  "kind": {
+    "candidate": "Кандидат",
+    "client": "Клієнт"
+  },
+  "status": {
+    "new": "Новий",
+    "in_progress": "В роботі",
+    "documents_submitted": "Документи подані",
+    "cancelled": "Відмінений",
+    "employed": "Працює",
+    "re_employed": "Повторне працевлаштування",
+    "dismissed": "Звільнений",
+    "blacklist": "Чорний список"
+  },
+  "hire": {
+    "button": "Працевлаштувати",
+    "title": "Працевлаштування",
+    "submit": "Працевлаштувати",
+    "success": "Працевлаштовано",
+    "alreadyEmployed": "Вже працевлаштовано",
+    "validationError": "Заповніть дату та житло",
+    "employedAt": "Дата початку",
+    "housing": "Житло",
+    "project": "Проєкт",
+    "coordinator": "Координатор"
+  },
+  "rehire": {
+    "button": "Повторно працевлаштувати",
+    "title": "Повторне працевлаштування",
+    "submit": "Повторно працевлаштувати",
+    "success": "Повторно працевлаштовано"
+  },
+  "cancel": {
+    "button": "Відмінити",
+    "title": "Відміна",
+    "submit": "Відмінити",
+    "submitBlacklist": "Внести в чорний список",
+    "success": "Відмінено",
+    "blacklistedSuccess": "Внесено в чорний список",
+    "reason": "Причина",
+    "reasonRequired": "Виберіть причину",
+    "note": "Коментар",
+    "noteRequired": "Опишіть причину",
+    "noteOptional": "(необов'язково, до 200 знаків)"
+  },
+  "bulk": {
+    "selectedCount": "{{count}} вибр.",
+    "clear": "Очистити вибір",
+    "changeStatus": {
+      "button": "Змінити статус ({{count}})",
+      "buttonShort": "Статус",
+      "title": "Зміна статусу для виділених",
+      "hint": "Виділено: {{count}}. Перехід у «Працює» / «Повторно працює» доступний лише на сторінці кандидата (потрібні житло, проєкт, координатор).",
+      "target": "Новий статус",
+      "reasonNote": "Причина (спільна для всіх)",
+      "reasonNoteHint": "Текст буде збережено як reason_note для кожного з {{count}} виділених кандидатів.",
+      "reasonRequired": "Обов'язково",
+      "blacklistWarning": "Увага: чорний список — термінальний статус, скасування можливе тільки адміном і по одному запису.",
+      "workStageWarning": "Увага: масова зміна на «Працює» / «Повторно працює» не задає житло, проєкт чи координатора. Щоб їх призначити, використовуй вікно «Працевлаштувати» на картці конкретного кандидата.",
+      "submit": "Застосувати",
+      "result": "Змінено статус: {{ok}} OK, {{failed}} помилок"
+    },
+    "consentRequest": {
+      "button": "Запити на згоду ({{count}})",
+      "buttonShort": "Згоди",
+      "title": "Надіслати запити на згоду",
+      "confirm": "Надіслати {{count}} кандидатам лист із лінком для підтвердження згоди? Кандидати без email будуть пропущені.",
+      "submit": "Надіслати",
+      "result": "Надіслано: {{sent}}, без email: {{skipped}}, помилок: {{failed}}",
+      "tooMany": "Максимум {{max}} за раз. Зменшіть вибір."
+    },
+    "delete": {
+      "button": "Видалити ({{count}})",
+      "buttonShort": "Видалити",
+      "title": "Видалити виділених",
+      "confirm": "Дійсно видалити (анонімізувати) {{count}} кандидатів? Дію не можна скасувати.",
+      "submit": "Видалити",
+      "result": "Видалено: {{ok}} OK, {{failed}} помилок"
+    }
+  },
+  "source": {
+    "facebook": "Facebook",
+    "work_ua": "Work.ua",
+    "flagma": "Flagma",
+    "website": "Форма",
+    "manual": "Додано вручну",
+    "unknown": "Невідоме джерело",
+    "instagram": "Instagram",
+    "referral": "Рекомендація"
+  },
+  "noShowReasons": {
+    "lost_contact": "Втрата контакту",
+    "personal_reasons": "Особисті обставини",
+    "unsuitable_conditions": "Невідповідні умови",
+    "client_no_longer_needs": "Замовник не потребує",
+    "blacklist": "Чорний список",
+    "legalization_rejected": "Відмова легалізації",
+    "legalization_problem": "Проблема з легалізацією",
+    "other": "Інше"
+  },
+  "form": {
+    "createTitle": "Новий клієнт",
+    "editTitle": "Редагування клієнта",
+    "submitCreate": "Додати",
+    "submitSave": "Зберегти",
+    "cancel": "Скасувати",
+    "saved": "Збережено",
+    "created": "Клієнта додано",
+    "firstNameRequired": "Ім'я обов'язкове",
+    "lastNameRequired": "Прізвище обов'язкове",
+    "sourceRequired": "Виберіть джерело (аналітика залежить від цього поля)",
+    "validationFailed": "Форму не збережено — перевірте виділені поля",
+    "recruiterRequired": "Виберіть рекрутера",
+    "addProject": "Додати проєкт",
+    "addProjectTitle": "Новий проєкт"
+  },
+  "detail": {
+    "edit": "Редагувати",
+    "delete": "Видалити",
+    "actionsMenu": "Дії",
+    "deleted": "Клієнта видалено",
+    "deleteConfirm": "Точно видалити цього клієнта? Особисті дані (ім'я, email, телефон, CV) буде безповоротно видалено. Історію звільнень і статистику буде збережено.",
+    "back": "Назад до списку",
+    "fullTab": "Все",
+    "tabs": {
+      "vacancy": "Вакансія",
+      "tasks": "Завдання"
+    },
+    "vacancy": {
+      "notAssigned": "Немає призначеної вакансії",
+      "title": "Назва",
+      "location": "Локація",
+      "startDate": "Дата початку",
+      "endDate": "Дата закінчення",
+      "status": "Статус",
+      "statusOpen": "Відкрита",
+      "statusClosed": "Закрита",
+      "documentsSubmittedAt": "Документи подано",
+      "open": "Відкрити вакансію"
+    },
+    "sections": {
+      "personal": "Особисті дані",
+      "work": "Робота",
+      "placements": "Розміщення",
+      "dismissals": "Звільнення",
+      "audit": "Історія змін"
+    },
+    "audit": {
+      "empty": "Немає записів",
+      "createdAt": "Дата",
+      "action": "Дія",
+      "actor": "Користувач"
+    },
+    "fields": {
+      "freelancer": "Фрілансер"
+    }
+  },
+  "duplicate": {
+    "title": "Можливий дублікат",
+    "prompt": "Знайдено схожих клієнтів у базі:",
+    "matchedBy": "Збіг:",
+    "viewExisting": "Переглянути існуючого",
+    "createAnyway": "Додати все одно",
+    "match": {
+      "email": "email",
+      "phone": "телефон",
+      "name": "ім'я і прізвище"
+    }
+  },
+  "kanban": {
+    "title": "Канбан клієнтів",
+    "statusUpdated": "Статус оновлено",
+    "dropHere": "Перетягніть сюди",
+    "moreRecords": "+ {{count}} більше",
+    "noCards": "Немає"
+  },
+  "errors": {
+    "hasPlacements": "Не можна видалити — клієнт має призначені заселення. Спочатку видаліть заселення або зачекайте на анонімізацію (FAZA 7).",
+    "notFound": "Клієнт не існує",
+    "noPermission": "Немає прав на цю операцію",
+    "statusUpdateFailed": "Не вдалося змінити статус",
+    "fullNameInvalid": "Введіть ім'я та прізвище (наприклад, Іван Коваленко)",
+    "loadFailed": "Не вдалося завантажити дані",
+    "retry": "Повторити"
+  }
+}

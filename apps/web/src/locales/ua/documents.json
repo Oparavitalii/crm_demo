@@ -1,0 +1,51 @@
+{
+  "title": "Документи",
+  "subtitle": "Регламенти, процедури та політики CRM Demo",
+  "categories": {
+    "regulamin": "Регламенти",
+    "rodo": "GDPR",
+    "procedura": "Процедури",
+    "polityka": "Політики",
+    "inne": "Інше"
+  },
+  "list": {
+    "empty": "Немає документів у цій категорії",
+    "requiresAcceptance": "Потребує згоди",
+    "accepted": "Прийнято",
+    "version": "Версія {{n}}"
+  },
+  "actions": {
+    "acceptAndContinue": "Я ознайомився(лася) та приймаю",
+    "openFile": "Відкрити файл",
+    "edit": "Редагувати",
+    "delete": "Видалити",
+    "publish": "Опублікувати",
+    "createMd": "Новий (Markdown)",
+    "createFile": "Новий (PDF)",
+    "exportCsv": "Експорт CSV"
+  },
+  "pending": {
+    "title": "Потрібні підтвердження",
+    "subtitle": "Щоб продовжити, ознайомтеся з документами нижче та підтвердіть їх поточну версію."
+  },
+  "admin": {
+    "title": "Управління документами",
+    "form": {
+      "slug": "Ідентифікатор (slug)",
+      "slugHelp": "lowercase, слова через дефіс",
+      "titleField": "Заголовок",
+      "category": "Категорія",
+      "contentMd": "Зміст (Markdown)",
+      "file": "Файл PDF",
+      "requiresAcceptance": "Потребує згоди",
+      "visibleToRoles": "Видимо для ролей"
+    },
+    "acceptances": {
+      "title": "Підтвердження документа",
+      "empty": "Ніхто ще не підтвердив цей документ"
+    }
+  },
+  "profile": {
+    "myAcceptances": "Мої підтвердження документів"
+  }
+}

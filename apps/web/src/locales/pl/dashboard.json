@@ -1,0 +1,242 @@
+{
+  "title": "Dashboard",
+  "range": {
+    "today": "Dzisiaj",
+    "7d": "7 dni",
+    "30d": "30 dni",
+    "thisMonth": "Ten miesiąc",
+    "lastMonth": "Poprzedni miesiąc",
+    "quarter": "Kwartał",
+    "all": "Wszystko",
+    "custom": "Własny",
+    "customPlaceholder": "Wybierz zakres dat"
+  },
+  "kpi": {
+    "totalCandidates": "Kandydaci łącznie",
+    "candidatesThisWeek": "W tym tygodniu",
+    "openTasks": "Otwarte zadania",
+    "conversionRate": "Konwersja"
+  },
+  "funnel": {
+    "title": "Lejek statusów",
+    "empty": "Brak danych do wyświetlenia"
+  },
+  "source": {
+    "title": "Źródła klientów",
+    "empty": "Brak danych do wyświetlenia",
+    "unknown": "Nieznane"
+  },
+  "recruiterKpi": {
+    "title": "Wyniki rekruterów",
+    "fullName": "Rekruter",
+    "candidatesOwned": "Klienci",
+    "recruited": "Zrekrutowani",
+    "arrived": "Doszło",
+    "employed": "Pracuje",
+    "avgTenure": "Średni staż",
+    "totalTenure": "Łączny staż",
+    "sources": "Źródła",
+    "daysShort": "dni",
+    "noSources": "—",
+    "noTenure": "—",
+    "conversionsThisMonth": "Konwersje (mies.)",
+    "dismissalsThisMonth": "Zwolnienia (mies.)",
+    "recruitedInPeriod": "Pozyskani (okres)",
+    "employedInPeriod": "Zatrudnieni (okres)",
+    "dismissedInPeriod": "Zwolnieni (okres)",
+    "empty": "Brak danych o rekruterach",
+    "kind": "Typ",
+    "kindRecruiter": "Etatowy",
+    "kindFreelancer": "Freelancer",
+    "showPeopleBtn": "Klienci",
+    "showStatsBtn": "Statystyki",
+    "actions": "Akcje"
+  },
+  "freelancerKpi": {
+    "title": "Wyniki freelancerów",
+    "fullName": "Freelancer",
+    "commissionRate": "Prowizja",
+    "candidatesOwned": "Pozyskani klienci",
+    "workingNow": "Obecnie pracujący",
+    "recruited": "Pozyskani",
+    "employed": "Pracuje",
+    "avgTenure": "Średni staż",
+    "sources": "Źródła",
+    "daysShort": "dni",
+    "noTenure": "—",
+    "dismissalsThisMonth": "Zwolnienia (mies.)",
+    "empty": "Brak aktywnych freelancerów lub przypisanych klientów"
+  },
+  "trend": {
+    "title": "Trend dzienny",
+    "candidates": "Klienci"
+  },
+  "tabs": {
+    "candidates": "Klienci",
+    "living": "Zakwaterowanie",
+    "employers": "Pracodawcy",
+    "admin": "Rekruterzy",
+    "coordinators": "Koordynatorzy"
+  },
+  "coordinatorKpi": {
+    "title": "KPI koordynatorów",
+    "fullName": "Pełna nazwa",
+    "coordinated": "Skoordynowano",
+    "currentlyHoused": "Aktualnie zakwaterowani",
+    "housingUtilization": "Wykorzystanie",
+    "avgTenure": "Średni staż",
+    "totalTenure": "Łączny staż",
+    "dismissalsThisMonth": "Zwolnienia w tym miesiącu",
+    "daysShort": "dni",
+    "noTenure": "—",
+    "empty": "Brak aktywnych koordynatorów",
+    "showPeopleBtn": "Klienci",
+    "showStatsBtn": "Statystyki",
+    "actions": "Akcje"
+  },
+  "drillDown": {
+    "tooltip": "Zobacz statystyki użytkownika"
+  },
+  "showPeopleTooltip": "Pokaż klientów tego użytkownika",
+  "peopleDrawer": {
+    "roleRecruiter": "Rekruter",
+    "roleCoordinator": "Koordynator",
+    "roleFreelancer": "Freelancer",
+    "search": "Szukaj (imię, email, telefon)",
+    "openFullList": "Otwórz pełną listę",
+    "empty": "Brak klientów u tego użytkownika",
+    "total_one": "{{count}} wpis",
+    "total_few": "{{count}} wpisy",
+    "total_many": "{{count}} wpisów",
+    "total_other": "{{count}} wpisów",
+    "col": {
+      "name": "Imię",
+      "status": "Status",
+      "position": "Stanowisko",
+      "project": "Projekt",
+      "source": "Źródło",
+      "createdAt": "Utworzono"
+    }
+  },
+  "employerPanel": {
+    "total": "Wszystkie zapytania",
+    "newThisMonth": "Nowe (bieżący miesiąc)",
+    "acceptanceRate": "Wskaźnik akceptacji",
+    "activePipeline": "Aktywne (nowe + skontaktowane)",
+    "byStatusTitle": "Zapytania wg statusu",
+    "status": "Status",
+    "count": "Ilość"
+  },
+  "housing": {
+    "ourHousing": "Mieszkanie agencji",
+    "ownHousing": "Własne mieszkanie"
+  },
+  "adminPanel": {
+    "totalActive": "Aktywni użytkownicy",
+    "totalInactive": "Nieaktywni",
+    "auditEvents": "Zdarzenia (bieżący miesiąc)",
+    "byRoleTitle": "Użytkownicy wg roli",
+    "role": "Rola",
+    "active": "Aktywni",
+    "inactive": "Nieaktywni",
+    "roles": {
+      "admin": "Administrator",
+      "recruiter": "Rekruter",
+      "coordinator": "Koordynator",
+      "readonly": "Tylko do odczytu"
+    }
+  },
+  "retention": {
+    "title": "Utrzymanie pracowników wg źródła",
+    "hint": "Procent osób, które nadal pracują (vs zwolnione) — w rozbiciu na źródło pozyskania",
+    "source": "Źródło",
+    "working": "Pracujący",
+    "dismissed": "Zwolnieni",
+    "rate": "Utrzymanie",
+    "unknownSource": "(brak źródła)",
+    "empty": "Brak danych — nie ma jeszcze pracujących ani zwolnionych klientów"
+  },
+  "retentionCat": {
+    "category": "Kategoria",
+    "employed": "Zatrudnieni",
+    "avgDaysFinished": "Śr. staż (zakończ.)",
+    "avgDaysWorking": "Śr. staż (prac.)",
+    "avgDaysAll": "Śr. staż (wszyscy)",
+    "totalDays": "Przepracowano",
+    "daysShort": "dn."
+  },
+  "retentionType": {
+    "title": "Retencja wg typu rekrutera",
+    "hint": "Wg tego, kto pozyskał pracownika — kliknij wiersz, aby zobaczyć imiennie",
+    "cat": {
+      "staff": "Etat",
+      "freelance": "Freelance",
+      "no_recruiter": "Bez rekrutera"
+    }
+  },
+  "retentionChan": {
+    "title": "Retencja wg kanału pozyskania",
+    "hint": "Wg źródła — kliknij wiersz, aby rozwinąć poszczególne źródła",
+    "cat": {
+      "social": "Media społecznościowe",
+      "jobBoards": "Portale pracy",
+      "website": "Nasza strona (www)",
+      "formRecruiter": "Formularz rekrutera",
+      "other": "Inne",
+      "unknown": "Nieznane"
+    }
+  },
+  "periodStats": {
+    "title": "Wskaźniki za wybrany okres",
+    "hint": "Zatrudnienia, zakończenia i przepracowane dni w wybranym zakresie",
+    "employed": "Zatrudniono",
+    "finished": "Zakończyli pracę",
+    "working": "Pracuje (na koniec okresu)",
+    "avgDaysFinished": "Śr. staż (zakończeni)",
+    "avgDaysWorking": "Śr. staż (nadal pracują)",
+    "totalDays": "Łącznie przepracowano",
+    "days": "dni",
+    "none": "—"
+  },
+  "empty": {
+    "title": "Brak danych",
+    "prompt": "Utwórz pierwszego klienta aby zobaczyć statystyki"
+  },
+  "launchpad": {
+    "title": "CRM Demo — Panel Administracyjny",
+    "description": "Zarządzaj klientami, kandydatami, zakwaterowaniem i komunikacją. Dane dostępne 24/7 dla zespołu rekrutacyjnego i koordynatorów.",
+    "viewAnalytics": "Zobacz analitykę",
+    "apiStatus": "Status API"
+  },
+  "cards": {
+    "manage": "Zarządzaj",
+    "candidates": {
+      "title": "Klienci",
+      "desc": "Dodawaj, edytuj i przeglądaj klientów. Pełna baza z filtrami, statusami i historią zatrudnienia."
+    },
+    "communications": {
+      "title": "Komunikacja",
+      "desc": "Szablony e-mail i SMS, wysyłka masowa, historia komunikacji z klientami."
+    },
+    "accommodations": {
+      "title": "Zakwaterowanie",
+      "desc": "Adresy, pokoje i pojemność. Śledź zajętość lokali w czasie rzeczywistym."
+    },
+    "dismissals": {
+      "title": "Ewidencja zwolnień",
+      "desc": "Pełna lista zwolnień z filtrami. Przyczyna, data, kto zarejestrował — wszystko w jednym miejscu."
+    },
+    "employers": {
+      "title": "Pracodawcy",
+      "desc": "Zapytania pracodawców z formularza na stronie. Zarządzaj statusem, przypisuj rekruterów, śledź konwersję."
+    },
+    "admin": {
+      "title": "Administracja",
+      "desc": "Zarządzaj użytkownikami, rolami i zaproszeniami. Resetowanie haseł i blokady kont."
+    },
+    "audit": {
+      "title": "Dziennik zdarzeń",
+      "desc": "Pełna historia zmian w systemie. Wymagane przez RODO — kto, co i kiedy zmienił."
+    }
+  }
+}

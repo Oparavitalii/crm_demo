@@ -1,0 +1,58 @@
+{
+  "title": "Zadania",
+  "myTasks": "Moje zadania",
+  "addTask": "Dodaj zadanie",
+  "empty": "Brak zadań",
+  "emptyOpen": "Brak otwartych zadań",
+  "created": "Zadanie dodane",
+  "updated": "Zadanie zaktualizowane",
+  "types": {
+    "contact": "Skontaktować",
+    "email": "Wysłać email",
+    "other": "Inne"
+  },
+  "fields": {
+    "title": "Tytuł",
+    "description": "Opis",
+    "type": "Typ",
+    "dueAt": "Termin",
+    "assignee": "Odpowiedzialny",
+    "candidate": "Kandydat",
+    "createdBy": "Przydzielił",
+    "status": "Status",
+    "done": "Wykonane",
+    "open": "Otwarte",
+    "overdue": "Przeterminowane",
+    "today": "Dziś",
+    "tomorrow": "Jutro",
+    "inDays": "Za {{n}} dni"
+  },
+  "status": {
+    "new": "Nowe",
+    "in_work": "W trakcie",
+    "completed": "Wykonane",
+    "cancelled": "Anulowane"
+  },
+  "filters": {
+    "all": "Wszystkie",
+    "open": "Otwarte",
+    "done": "Wykonane",
+    "allStatuses": "Wszystkie statusy",
+    "overdueOnly": "Tylko przeterminowane",
+    "allTypes": "Wszystkie typy",
+    "allAssignees": "Wszyscy odpowiedzialni"
+  },
+  "form": {
+    "submit": "Dodaj",
+    "cancel": "Anuluj",
+    "titleRequired": "Tytuł wymagany",
+    "typeRequired": "Typ wymagany",
+    "assigneeRequired": "Odpowiedzialny wymagany"
+  },
+  "delete": {
+    "title": "Usuń zadanie",
+    "confirm": "Usunąć to zadanie?",
+    "button": "Usuń",
+    "deleted": "Zadanie usunięte"
+  }
+}
