@@ -1,0 +1,21 @@
+# Local PostgreSQL for development and the demo. Credentials are local-only
+# placeholders that match .env.example.
+services:
+  postgres:
+    image: postgres:17-alpine
+    environment:
+      POSTGRES_USER: opushr
+      POSTGRES_PASSWORD: opushr
+      POSTGRES_DB: opushr
+    ports:
+      - '5432:5432'
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ['CMD-SHELL', 'pg_isready -U opushr']
+      interval: 5s
+      timeout: 5s
+      retries: 10
+
+volumes:
+  pgdata:

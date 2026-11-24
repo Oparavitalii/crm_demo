@@ -1,0 +1,48 @@
+{
+  "list": {
+    "title": "Zapytania pracodawców",
+    "search": "Szukaj firmy, kontaktu, e-mail…",
+    "total": "Łącznie: {{count}}",
+    "empty": "Brak zapytań",
+    "filters": {
+      "allStatuses": "Wszystkie statusy"
+    }
+  },
+  "status": {
+    "new": "Nowe",
+    "contacted": "Skontaktowano",
+    "accepted": "Zaakceptowane",
+    "rejected": "Odrzucone",
+    "archived": "Zarchiwizowane"
+  },
+  "source": {
+    "web": "Formularz www",
+    "manual": "Dodano ręcznie"
+  },
+  "fields": {
+    "companyName": "Nazwa firmy",
+    "contactPerson": "Osoba kontaktowa",
+    "email": "Adres e-mail",
+    "phone": "Numer telefonu",
+    "message": "Wiadomość",
+    "status": "Status",
+    "source": "Źródło",
+    "createdAt": "Data zgłoszenia",
+    "contactedAt": "Pierwszy kontakt",
+    "closedAt": "Zamknięto",
+    "internalNotes": "Notatki wewnętrzne"
+  },
+  "form": {
+    "cancel": "Anuluj"
+  },
+  "detail": {
+    "back": "Powrót do zapytań",
+    "manage": "Zarządzaj zapytaniem",
+    "save": "Zapisz zmiany",
+    "saved": "Zapytanie zaktualizowane",
+    "delete": "Usuń",
+    "deleted": "Zapytanie usunięte",
+    "deleteConfirm": "Na pewno usunąć to zapytanie? Akcja jest nieodwracalna.",
+    "notesPlaceholder": "Wewnętrzne notatki — nie wysyłane do klienta"
+  }
+}

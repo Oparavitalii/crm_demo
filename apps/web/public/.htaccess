@@ -1,0 +1,100 @@
+# OPUS HR CRM — Apache config for shared hosting (example deploy target)
+# Vite copies this file from apps/web/public/ to dist/ on every build, so it
+# travels with the deploy. Don't delete it from the hosting again.
+
+# ---------------------------------------------------------------------------
+# SPA fallback — every URL that doesn't match a real file falls back to
+# index.html so React Router can handle client-side routes like /admin/users.
+# Without this, hitting /admin/users directly returns 404 from Apache.
+# ---------------------------------------------------------------------------
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteBase /
+  RewriteRule ^index\.html$ - [L]
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteRule . /index.html [L]
+</IfModule>
+
+# ---------------------------------------------------------------------------
+# Force HTTPS — never serve the CRM over plain HTTP.
+# ---------------------------------------------------------------------------
+<IfModule mod_rewrite.c>
+  RewriteCond %{HTTPS} off
+  RewriteCond %{HTTP:X-Forwarded-Proto} !https
+  RewriteRule (.*) https://%{HTTP_HOST}%{REQUEST_URI} [R=301,L]
+</IfModule>
+
+# ---------------------------------------------------------------------------
+# Compression — drops the JS bundle from ~400 KB to ~125 KB over the wire.
+# ---------------------------------------------------------------------------
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html text/plain text/css text/javascript application/javascript application/json application/xml image/svg+xml
+</IfModule>
+
+# ---------------------------------------------------------------------------
+# Cache control — Vite emits hashed filenames (assets/abc-DEFG.js), so the
+# bundle assets are safe to cache forever. index.html must NEVER be cached
+# or users will get stuck on an old version.
+# ---------------------------------------------------------------------------
+<IfModule mod_expires.c>
+  ExpiresActive On
+
+  # Hashed bundle assets — immutable for 1 year
+  ExpiresByType application/javascript "access plus 1 year"
+  ExpiresByType text/javascript        "access plus 1 year"
+  ExpiresByType text/css                "access plus 1 year"
+  ExpiresByType image/png               "access plus 1 month"
+  ExpiresByType image/jpeg              "access plus 1 month"
+  ExpiresByType image/svg+xml           "access plus 1 month"
+  ExpiresByType image/x-icon            "access plus 1 month"
+  ExpiresByType application/font-woff2  "access plus 1 year"
+
+  # index.html — short cache so deploys propagate fast
+  ExpiresByType text/html               "access plus 0 seconds"
+</IfModule>
+
+<IfModule mod_headers.c>
+  # Hashed assets — immutable (overrides Expires above with stronger semantics)
+  <FilesMatch "\.(js|css|woff2|png|jpg|jpeg|svg)$">
+    Header set Cache-Control "public, max-age=31536000, immutable"
+  </FilesMatch>
+  # index.html — no cache; deploy must take effect immediately
+  <FilesMatch "^index\.html$">
+    Header set Cache-Control "no-store, no-cache, must-revalidate, max-age=0"
+  </FilesMatch>
+</IfModule>
+
+# ---------------------------------------------------------------------------
+# Security headers — defense in depth. The backend sets its own (Hono
+# secureHeaders), this covers the static asset serving.
+# ---------------------------------------------------------------------------
+<IfModule mod_headers.c>
+  # Prevent clickjacking — CRM should never be embedded as an iframe
+  Header always set X-Frame-Options "DENY"
+  # MIME type sniffing protection
+  Header always set X-Content-Type-Options "nosniff"
+  # Referrer policy — don't leak the URL on outbound clicks
+  Header always set Referrer-Policy "strict-origin-when-cross-origin"
+  # Permissions — disable unused powerful APIs
+  Header always set Permissions-Policy "geolocation=(), microphone=(), camera=(), payment=()"
+  # HSTS — force HTTPS for 1 year. only enable once HTTPS works on your domain
+  # 2026-06-15. Browsers will cache this; downgrading later is painful, so do
+  # NOT add `preload` until the domain is in the HSTS preload list.
+  Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains"
+</IfModule>
+
+# ---------------------------------------------------------------------------
+# Hide source maps from public — they're built for Sentry but no need to
+# serve them to anyone visiting the CRM.
+# ---------------------------------------------------------------------------
+<FilesMatch "\.map$">
+  Require all denied
+</FilesMatch>
+
+# ---------------------------------------------------------------------------
+# Block access to dotfiles (e.g. if someone uploads .env by accident)
+# ---------------------------------------------------------------------------
+<FilesMatch "^\.">
+  Require all denied
+</FilesMatch>

@@ -1,0 +1,44 @@
+{
+  "title": "Aplikacja kandydata",
+  "loadingRecruiter": "Ładowanie...",
+  "handledBy": "Aplikację obsłuży: {{name}}",
+  "generalForm": "Aplikację odbierze koordynator OPUS HR.",
+  "fields": {
+    "name": "Imię i nazwisko",
+    "birthDate": "Data urodzenia",
+    "nationality": "Obywatelstwo",
+    "phone": "Numer telefonu",
+    "email": "Email",
+    "messenger": "Komunikator (WhatsApp / Telegram / Viber)",
+    "experience": "Poprzednie doświadczenie zawodowe"
+  },
+  "placeholders": {
+    "name": "Jan Kowalski",
+    "birthDate": "01.01.1990",
+    "nationality": "Wybierz obywatelstwo",
+    "phone": "+48 600 123 456",
+    "email": "jan@example.com",
+    "messenger": "TG: @jan, WA: +48...",
+    "experience": "Opisz krótko, gdzie i jako kto pracowałeś..."
+  },
+  "consent": {
+    "prefix": "Zapoznałem(-am) się z",
+    "linkLabel": "polityką prywatności",
+    "suffix": "i wyrażam zgodę na przetwarzanie moich danych.",
+    "sms": "Wyrażam zgodę na otrzymywanie od OPUS HR wiadomości SMS z ofertami pracy (opcjonalnie).",
+    "emailMarketing": "Wyrażam zgodę na otrzymywanie od OPUS HR ofert pracy e-mailem (opcjonalnie)."
+  },
+  "submit": "Wyślij aplikację",
+  "success": {
+    "title": "Dziękujemy!",
+    "body": "Otrzymaliśmy Twoją aplikację. Rekruter skontaktuje się z Tobą wkrótce."
+  },
+  "errors": {
+    "required": "To pole jest wymagane",
+    "emailOrPhone": "Podaj email lub telefon",
+    "consentRequired": "Wymagana zgoda na przetwarzanie danych",
+    "generic": "Wystąpił błąd — spróbuj ponownie lub skontaktuj się bezpośrednio.",
+    "tooMany": "Zbyt wiele prób. Poczekaj minutę i spróbuj ponownie."
+  },
+  "language": "Język formularza"
+}

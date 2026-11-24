@@ -1,0 +1,412 @@
+{
+  "version": "7",
+  "dialect": "postgresql",
+  "entries": [
+    {
+      "idx": 0,
+      "version": "7",
+      "when": 1778659673243,
+      "tag": "0000_fat_adam_destine",
+      "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "7",
+      "when": 1778660168567,
+      "tag": "0001_robust_lethal_legion",
+      "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "7",
+      "when": 1778660813531,
+      "tag": "0002_third_the_professor",
+      "breakpoints": true
+    },
+    {
+      "idx": 3,
+      "version": "7",
+      "when": 1778689892744,
+      "tag": "0003_youthful_micromacro",
+      "breakpoints": true
+    },
+    {
+      "idx": 4,
+      "version": "7",
+      "when": 1778690519561,
+      "tag": "0004_noisy_miek",
+      "breakpoints": true
+    },
+    {
+      "idx": 5,
+      "version": "7",
+      "when": 1778700574551,
+      "tag": "0005_striped_blue_marvel",
+      "breakpoints": true
+    },
+    {
+      "idx": 6,
+      "version": "7",
+      "when": 1778741500157,
+      "tag": "0006_demonic_shinko_yamashiro",
+      "breakpoints": true
+    },
+    {
+      "idx": 7,
+      "version": "7",
+      "when": 1778915634811,
+      "tag": "0007_curly_thundra",
+      "breakpoints": true
+    },
+    {
+      "idx": 8,
+      "version": "7",
+      "when": 1778939921419,
+      "tag": "0008_short_shadow_king",
+      "breakpoints": true
+    },
+    {
+      "idx": 9,
+      "version": "7",
+      "when": 1779288123727,
+      "tag": "0009_organic_tenebrous",
+      "breakpoints": true
+    },
+    {
+      "idx": 10,
+      "version": "7",
+      "when": 1779372983652,
+      "tag": "0010_dapper_squadron_supreme",
+      "breakpoints": true
+    },
+    {
+      "idx": 11,
+      "version": "7",
+      "when": 1779374272407,
+      "tag": "0011_tiresome_ricochet",
+      "breakpoints": true
+    },
+    {
+      "idx": 12,
+      "version": "7",
+      "when": 1779375417711,
+      "tag": "0012_lucky_scourge",
+      "breakpoints": true
+    },
+    {
+      "idx": 13,
+      "version": "7",
+      "when": 1779375697992,
+      "tag": "0013_bouncy_jean_grey",
+      "breakpoints": true
+    },
+    {
+      "idx": 14,
+      "version": "7",
+      "when": 1780075141550,
+      "tag": "0014_demonic_phalanx",
+      "breakpoints": true
+    },
+    {
+      "idx": 15,
+      "version": "7",
+      "when": 1780075518550,
+      "tag": "0015_brown_bullseye",
+      "breakpoints": true
+    },
+    {
+      "idx": 16,
+      "version": "7",
+      "when": 1780077166455,
+      "tag": "0016_thankful_omega_flight",
+      "breakpoints": true
+    },
+    {
+      "idx": 17,
+      "version": "7",
+      "when": 1780078958324,
+      "tag": "0017_blue_siren",
+      "breakpoints": true
+    },
+    {
+      "idx": 18,
+      "version": "7",
+      "when": 1780081509507,
+      "tag": "0018_quiet_molten_man",
+      "breakpoints": true
+    },
+    {
+      "idx": 19,
+      "version": "7",
+      "when": 1780600000000,
+      "tag": "0019_housing_dashboard",
+      "breakpoints": true
+    },
+    {
+      "idx": 20,
+      "version": "7",
+      "when": 1780700000000,
+      "tag": "0020_candidate_comments",
+      "breakpoints": true
+    },
+    {
+      "idx": 21,
+      "version": "7",
+      "when": 1780800000000,
+      "tag": "0021_coordinator_backfill",
+      "breakpoints": true
+    },
+    {
+      "idx": 22,
+      "version": "7",
+      "when": 1780900000000,
+      "tag": "0022_tasks",
+      "breakpoints": true
+    },
+    {
+      "idx": 23,
+      "version": "7",
+      "when": 1781000000000,
+      "tag": "0023_status_lookups",
+      "breakpoints": true
+    },
+    {
+      "idx": 24,
+      "version": "7",
+      "when": 1781250000000,
+      "tag": "0024_status_model_rework",
+      "breakpoints": true
+    },
+    {
+      "idx": 25,
+      "version": "7",
+      "when": 1781350000000,
+      "tag": "0025_tasks_simplify",
+      "breakpoints": true
+    },
+    {
+      "idx": 26,
+      "version": "7",
+      "when": 1781400000000,
+      "tag": "0026_users_is_freelancer",
+      "breakpoints": true
+    },
+    {
+      "idx": 27,
+      "version": "7",
+      "when": 1781500000000,
+      "tag": "0027_candidate_status_lookup",
+      "breakpoints": true
+    },
+    {
+      "idx": 28,
+      "version": "7",
+      "when": 1781600000000,
+      "tag": "0028_fix_candidate_status_lookup",
+      "breakpoints": true
+    },
+    {
+      "idx": 29,
+      "version": "7",
+      "when": 1781650000000,
+      "tag": "0029_drop_vacancies",
+      "breakpoints": true
+    },
+    {
+      "idx": 30,
+      "version": "7",
+      "when": 1781700000000,
+      "tag": "0030_project_headcount",
+      "breakpoints": true
+    },
+    {
+      "idx": 31,
+      "version": "7",
+      "when": 1781750000000,
+      "tag": "0031_drop_facebook",
+      "breakpoints": true
+    },
+    {
+      "idx": 32,
+      "version": "7",
+      "when": 1781800000000,
+      "tag": "0032_drop_commute_type",
+      "breakpoints": true
+    },
+    {
+      "idx": 33,
+      "version": "7",
+      "when": 1781850000000,
+      "tag": "0033_candidate_position_legal_status",
+      "breakpoints": true
+    },
+    {
+      "idx": 34,
+      "version": "7",
+      "when": 1781900000000,
+      "tag": "0034_nationality_lookups",
+      "breakpoints": true
+    },
+    {
+      "idx": 35,
+      "version": "7",
+      "when": 1781950000000,
+      "tag": "0035_consent_withdrawal_token",
+      "breakpoints": true
+    },
+    {
+      "idx": 36,
+      "version": "7",
+      "when": 1782000000000,
+      "tag": "0036_candidate_payout_columns",
+      "breakpoints": true
+    },
+    {
+      "idx": 37,
+      "version": "7",
+      "when": 1782050000000,
+      "tag": "0037_candidate_retention",
+      "breakpoints": true
+    },
+    {
+      "idx": 38,
+      "version": "7",
+      "when": 1782100000000,
+      "tag": "0038_data_quality_fixes",
+      "breakpoints": true
+    },
+    {
+      "idx": 39,
+      "version": "7",
+      "when": 1782150000000,
+      "tag": "0039_drop_external_id_and_files",
+      "breakpoints": true
+    },
+    {
+      "idx": 40,
+      "version": "7",
+      "when": 1782200000000,
+      "tag": "0040_drop_lifecycle_columns",
+      "breakpoints": true
+    },
+    {
+      "idx": 41,
+      "version": "7",
+      "when": 1782250000000,
+      "tag": "0041_drop_work_hours_summary",
+      "breakpoints": true
+    },
+    {
+      "idx": 42,
+      "version": "7",
+      "when": 1782300000000,
+      "tag": "0042_backfill_created_at_from_lifecycle",
+      "breakpoints": true
+    },
+    {
+      "idx": 43,
+      "version": "7",
+      "when": 1782350000000,
+      "tag": "0043_stamp_imported_candidates_jan_2026",
+      "breakpoints": true
+    },
+    {
+      "idx": 44,
+      "version": "7",
+      "when": 1782400000000,
+      "tag": "0044_project_headcount_reset",
+      "breakpoints": true
+    },
+    {
+      "idx": 45,
+      "version": "7",
+      "when": 1782450000000,
+      "tag": "0045_drop_leads_and_split_name",
+      "breakpoints": true
+    },
+    {
+      "idx": 46,
+      "version": "7",
+      "when": 1782500000000,
+      "tag": "0046_candidate_messenger_experience",
+      "breakpoints": true
+    },
+    {
+      "idx": 47,
+      "version": "7",
+      "when": 1782550000000,
+      "tag": "0047_user_public_slug",
+      "breakpoints": true
+    },
+    {
+      "idx": 48,
+      "version": "7",
+      "when": 1782600000000,
+      "tag": "0048_nationality_extras",
+      "breakpoints": true
+    },
+    {
+      "idx": 49,
+      "version": "7",
+      "when": 1782650000000,
+      "tag": "0049_session_rotation_tombstones",
+      "breakpoints": true
+    },
+    {
+      "idx": 50,
+      "version": "7",
+      "when": 1782700000000,
+      "tag": "0050_sessions_refresh_token_hash_idx",
+      "breakpoints": true
+    },
+    {
+      "idx": 51,
+      "version": "7",
+      "when": 1782750000000,
+      "tag": "0051_sms_consent_phone",
+      "breakpoints": true
+    },
+    {
+      "idx": 52,
+      "version": "7",
+      "when": 1782800000000,
+      "tag": "0052_source_form_recruiter_lookup",
+      "breakpoints": true
+    },
+    {
+      "idx": 53,
+      "version": "7",
+      "when": 1782850000000,
+      "tag": "0053_source_channel_group",
+      "breakpoints": true
+    },
+    {
+      "idx": 54,
+      "version": "7",
+      "when": 1782900000000,
+      "tag": "0054_email_consent_and_optin_tokens",
+      "breakpoints": true
+    },
+    {
+      "idx": 55,
+      "version": "7",
+      "when": 1782950000000,
+      "tag": "0055_template_auto_send_on_create",
+      "breakpoints": true
+    },
+    {
+      "idx": 56,
+      "version": "7",
+      "when": 1783000000000,
+      "tag": "0056_backfill_rodo_basis",
+      "breakpoints": true
+    },
+    {
+      "idx": 57,
+      "version": "7",
+      "when": 1783050000000,
+      "tag": "0057_repair_employment_periods",
+      "breakpoints": true
+    }
+  ]
+}

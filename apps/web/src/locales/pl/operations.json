@@ -1,0 +1,192 @@
+{
+  "housing": {
+    "title": "Mieszkania",
+    "ourHousing": "Mieszkanie agencji",
+    "ownHousing": "Własne mieszkanie",
+    "empty": "Brak mieszkańców",
+    "tableName": "Imię i nazwisko",
+    "tableStatus": "Status",
+    "tableUpdatedAt": "Zaktualizowano",
+    "showMore": "Pokaż więcej",
+    "showing": "Pokazano {{count}} z {{total}}"
+  },
+  "dismissalsRegistry": {
+    "title": "Ewidencja zwolnień / Raport utrzymania",
+    "exportCsv": "Eksport CSV",
+    "total": "Łącznie: {{count}}",
+    "empty": "Brak zwolnień spełniających kryteria",
+    "filters": {
+      "search": "Szukaj",
+      "searchPlaceholder": "Imię lub nazwisko",
+      "source": "Źródło",
+      "allSources": "Wszystkie źródła",
+      "project": "Projekt",
+      "allProjects": "Wszystkie projekty",
+      "recruiter": "Rekruter",
+      "allRecruiters": "Wszyscy rekruterzy",
+      "coordinator": "Koordynator",
+      "allCoordinators": "Wszyscy koordynatorzy",
+      "reasonCode": "Powód (kod)",
+      "allReasons": "Wszystkie powody",
+      "dateFrom": "Od",
+      "dateTo": "Do",
+      "dateRange": "Zakres dat zwolnienia",
+      "reason": "Powód (tekst)",
+      "reasonPlaceholder": "Szukaj po tekście…",
+      "recordedBy": "Zarejestrował(a)",
+      "candidate": "Klient",
+      "all": "Wszystkie"
+    },
+    "fields": {
+      "candidate": "Klient",
+      "project": "Projekt",
+      "recruiter": "Rekruter",
+      "coordinator": "Koordynator",
+      "daysWorked": "Dni pracy",
+      "source": "Źródło",
+      "reason": "Powód",
+      "reasonNote": "Notatka",
+      "dismissedAt": "Data zwolnienia",
+      "recordedBy": "Zarejestrował(a)"
+    }
+  },
+  "dismissals": {
+    "export": "Eksportuj Excel",
+    "exportSuccess": "Pobrano plik Excel ({{count}} rekordów)",
+    "exportSuccessNoCount": "Excel pobrany",
+    "exportError": "Nie udało się wyeksportować",
+    "list": {
+      "title": "Zwolnienia",
+      "add": "Dodaj zwolnienie",
+      "empty": "Brak zwolnień"
+    },
+    "fields": {
+      "dismissedAt": "Data zwolnienia",
+      "reason": "Powód",
+      "reasonPlaceholder": "Wybierz powód…",
+      "reasonOther": "Inny powód (opisz)",
+      "recordedBy": "Zarejestrował(a)",
+      "notes": "Notatki"
+    },
+    "reasons": {
+      "employee_resigned": "Z inicjatywy pracownika",
+      "returned_home": "Powrót do domu",
+      "found_other_job": "Znalazł inną pracę",
+      "low_performance": "Niska wydajność",
+      "absenteeism": "Absencja / nie stawił się",
+      "misconduct": "Naruszenie regulaminu",
+      "contract_ended": "Koniec kontraktu",
+      "health_issues": "Problemy zdrowotne",
+      "conflict": "Konflikt",
+      "other": "Inny powód"
+    },
+    "form": {
+      "createTitle": "Nowe zwolnienie",
+      "editTitle": "Edycja zwolnienia",
+      "submit": "Zapisz",
+      "cancel": "Anuluj",
+      "saved": "Zwolnienie zapisane",
+      "created": "Zwolnienie dodane",
+      "reasonRequired": "Wybierz powód zwolnienia",
+      "reasonOtherRequired": "Opisz inny powód"
+    },
+    "detail": {
+      "edit": "Edytuj",
+      "delete": "Usuń",
+      "deleted": "Zwolnienie usunięte",
+      "deleteConfirm": "Na pewno usunąć to zwolnienie?"
+    }
+  },
+  "vacancies": {
+    "list": {
+      "title": "Wakaty",
+      "add": "Dodaj wakat",
+      "empty": "Brak wakatów",
+      "total": "Łącznie: {{count}}",
+      "filters": {
+        "search": "Szukaj (stanowisko, lokalizacja)",
+        "isOpen": "Status",
+        "open": "Otwarte",
+        "closed": "Zamknięte",
+        "all": "Wszystkie",
+        "dateCreated": "Data dodania",
+        "dateStart": "Data rozpoczęcia"
+      }
+    },
+    "fields": {
+      "title": "Stanowisko",
+      "project": "Projekt",
+      "location": "Lokalizacja",
+      "requiredCount": "Wymagana liczba osób",
+      "peopleCount": "Liczba osób",
+      "startDate": "Data rozpoczęcia",
+      "endDate": "Data zakończenia",
+      "description": "Opis",
+      "isOpen": "Otwarty",
+      "recruitedCount": "Zrekrutowano",
+      "details": "Szczegóły",
+      "createdBy": "Dodano przez",
+      "createdAt": "Data dodania",
+      "notes": "Komentarz"
+    },
+    "form": {
+      "createTitle": "Nowy wakat",
+      "editTitle": "Edycja wakatu",
+      "submit": "Zapisz",
+      "cancel": "Anuluj",
+      "saved": "Wakat zapisany",
+      "created": "Wakat dodany"
+    },
+    "detail": {
+      "back": "Powrót do wakatów",
+      "edit": "Edytuj",
+      "delete": "Usuń",
+      "deleted": "Wakat usunięty",
+      "deleteConfirm": "Na pewno usunąć ten wakat?",
+      "open": "Otwarty",
+      "closed": "Zamknięty",
+      "slotsTitle": "Miejsca (sloty)",
+      "reserveSlot": "Zarezerwuj miejsce",
+      "infoTab": "Info",
+      "fullTab": "Wszystko",
+      "sections": {
+        "basic": "Informacje podstawowe",
+        "slots": "Sloty",
+        "fillRate": "Wypełnienie",
+        "audit": "Dziennik zdarzeń"
+      },
+      "fillRateText": "Obsadzone {{filled}} z {{required}} ({{percent}}%)",
+      "auditEmpty": "Brak wpisów w dzienniku"
+    },
+    "slots": {
+      "recruiter": "Rekruter",
+      "candidate": "Klient",
+      "reservedAt": "Zarezerwowano",
+      "filledAt": "Obsadzone",
+      "cancelledAt": "Anulowane",
+      "fill": "Obsadź",
+      "cancel": "Anuluj rezerwację",
+      "empty": "Brak zarezerwowanych miejsc",
+      "assign": "Przypisz klienta",
+      "assignTitle": "Przypisz klienta do slotu",
+      "assignHint": "Wybierz klienta, którego osadzasz w tym slocie. Slot zostanie oznaczony jako obsadzony.",
+      "pickCandidate": "Wybierz klienta",
+      "filled": "Slot obsadzony",
+      "notes": "Komentarz"
+    },
+    "reserveModal": {
+      "hint": "Wybierz osobę do tego slotu albo zarezerwuj puste miejsce.",
+      "modeEmpty": "Puste",
+      "modeCandidate": "Klient",
+      "errorFull": "Wakat jest pełny",
+      "errorClosed": "Wakat jest zamknięty"
+    },
+    "submittedCandidates": {
+      "tabTitle": "Zgłoszeni kandydaci",
+      "empty": "Brak zgłoszeń",
+      "tableName": "Kandydat",
+      "tableStatus": "Status",
+      "tableSubmittedAt": "Złożony"
+    }
+  }
+}

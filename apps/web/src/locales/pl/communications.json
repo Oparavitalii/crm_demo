@@ -1,0 +1,155 @@
+{
+  "templates": {
+    "list": {
+      "title": "Szablony wiadomości",
+      "add": "Nowy szablon",
+      "search": "Szukaj szablonów...",
+      "empty": "Brak szablonów",
+      "total": "Łącznie: {{count}}",
+      "filters": {
+        "allChannels": "Wszystkie kanały"
+      }
+    },
+    "fields": {
+      "name": "Nazwa szablonu",
+      "channel": "Kanał",
+      "subject": "Temat",
+      "body": "Treść",
+      "variables": "Zmienne",
+      "createdAt": "Utworzono"
+    },
+    "channel": {
+      "email": "Email",
+      "sms": "SMS"
+    },
+    "badge": {
+      "onboarding": "Onboarding"
+    },
+    "form": {
+      "createTitle": "Nowy szablon",
+      "editTitle": "Edytuj szablon",
+      "submitCreate": "Utwórz",
+      "submitSave": "Zapisz",
+      "cancel": "Anuluj",
+      "saved": "Szablon zapisany",
+      "created": "Szablon utworzony",
+      "variablesHint": "Dostępne zmienne: {{firstName}}, {{lastName}}, {{email}}, {{phone}}, {{consentConfirmUrl}}",
+      "autoSend": {
+        "label": "Wysyłaj automatycznie do nowych kandydatów (e-mail onboardingowy)",
+        "caption": "Tylko jeden szablon e-mail może być onboardingowy — obowiązuje ostatnio oznaczony."
+      },
+      "consentBlock": {
+        "button": "Wstaw blok zgody",
+        "linkText": "Potwierdź zgodę"
+      },
+      "sms": {
+        "charCount": "{{count}} znaków · {{parts}} SMS",
+        "tooLong": "Treść za długa — maks 210 znaków (3 SMS)",
+        "optOutHint": "Stopka z linkiem rezygnacji dodawana automatycznie przez dostawcę"
+      }
+    },
+    "detail": {
+      "edit": "Edytuj",
+      "delete": "Usuń",
+      "deleted": "Szablon usunięty",
+      "deleteConfirm": "Na pewno usunąć ten szablon? Tej operacji nie można cofnąć.",
+      "back": "Powrót do listy",
+      "preview": "Podgląd"
+    },
+    "errors": {
+      "notFound": "Szablon nie istnieje",
+      "noPermission": "Brak uprawnień do tej operacji"
+    }
+  },
+  "bulkSend": {
+    "title": "Wysyłka masowa",
+    "step1": {
+      "title": "Wybierz kanał i szablon",
+      "placeholder": "Wybierz szablon...",
+      "smsHint": "SMS trafi tylko do klientów z numerem telefonu i aktywną zgodą SMS. Limit dzienny: 200."
+    },
+    "step2": {
+      "title": "Filtruj odbiorców",
+      "allStatuses": "Wszystkie statusy",
+      "allSources": "Wszystkie źródła",
+      "allRecruiters": "Wszyscy rekruterzy"
+    },
+    "step3": {
+      "title": "Podgląd odbiorców",
+      "previewBtn": "Sprawdź liczbę odbiorców",
+      "count": "Pasujących klientów: {{count}}",
+      "tooMany": "Zbyt wiele wyników ({{count}}). Maksimum to 100 — zawęź filtry.",
+      "noRecipients": "Brak klientów spełniających filtry",
+      "smsBreakdown": "Ze zgodą SMS: {{consented}}. Bez zgody SMS: {{withoutConsent}} — wyślij tylko, jeśli masz ich zgodę papierową.",
+      "overrideAdminOnly": "Wysyłkę bez zgody cyfrowej może wykonać tylko administrator."
+    },
+    "step4": {
+      "title": "Wyślij",
+      "sendBtn": "Wyślij do {{count}} klientów",
+      "sendConsentedBtn": "Tylko za zgodą ({{count}})",
+      "sendAllBtn": "Wyślij do wszystkich ({{count}})",
+      "dryRunBtn": "Próbna wysyłka (dry run)",
+      "sending": "Wysyłanie...",
+      "resultSuccess": "Wysłano: {{sent}}, błędów: {{failed}}",
+      "resultSuccessOverride": "Wysłano: {{sent}}, błędów: {{failed}} (w tym {{withoutConsent}} bez zgody SMS)",
+      "resultDryRun": "Dry run — {{count}} klientów, nic nie wysłano",
+      "resultNone": "Nikomu nie wysłano — żaden z zaznaczonych nie ma aktywnej zgody na ten kanał."
+    },
+    "errors": {
+      "noTemplate": "Wybierz szablon",
+      "tooManyRecipients": "Za dużo odbiorców ({{count}}). Maksimum: 100",
+      "sendFailed": "Wysyłka nie powiodła się"
+    }
+  },
+  "sendToSelected": {
+    "title": "Wyślij wiadomość do zaznaczonych",
+    "buttonLabel": "Wyślij wiadomość ({{count}})",
+    "buttonShort": "E-mail",
+    "count": "Zaznaczonych odbiorców: {{count}}",
+    "hint": "Anonimizowani odbiorcy i bez emaila są automatycznie pomijani po stronie serwera. Maks. 100 odbiorców.",
+    "hintSms": "SMS trafi tylko do odbiorców z numerem telefonu i aktywną zgodą SMS — pozostali są pomijani po stronie serwera. Maks. 100 odbiorców.",
+    "hintEmail": "E-mail trafi tylko do odbiorców z aktywną zgodą e-mail — pozostali są pomijani po stronie serwera. Maks. 100 odbiorców.",
+    "consentBreakdown": "Ze zgodą: {{consented}}. Bez zgody: {{withoutConsent}} — do nich nie wyślemy (brak aktywnej zgody)."
+  },
+  "consentCampaign": {
+    "button": "Kampania potwierdzenia zgody",
+    "title": "Kampania potwierdzenia zgody",
+    "intro": "Wyśle e-mail z prośbą o potwierdzenie zgody na otrzymywanie ofert pracy. Kandydaci, którzy już wyrazili zgodę na wysyłkę e-mail, zostaną pominięci.",
+    "placeholderHint": "Szablon musi zawierać zmienną {{code}} — w przeciwnym razie wysyłka zostanie odrzucona.",
+    "template": "Szablon e-mail",
+    "status": "Status",
+    "source": "Źródło",
+    "recruiter": "Rekruter",
+    "send": "Wyślij kampanię",
+    "resultDryRun": "Próbny przebieg — {{count}} odbiorców, nic nie wysłano",
+    "resultSuccess": "Wysłano: {{sent}}. Pominięto (już wyrazili zgodę): {{skipped}}",
+    "resultDetail": "Łącznie: {{total}} · wysłano: {{sent}} · błędy: {{failed}} · pominięto (już wyrazili zgodę): {{skipped}}",
+    "errors": {
+      "missingPlaceholder": "Szablon musi zawierać zmienną {{code}}. Dodaj ją do treści szablonu i spróbuj ponownie."
+    }
+  },
+  "history": {
+    "title": "Historia wysyłek",
+    "empty": "Brak historii wysyłek",
+    "fields": {
+      "candidate": "Klient",
+      "channel": "Kanał",
+      "template": "Szablon",
+      "subject": "Temat",
+      "sender": "Wysłał",
+      "status": "Status",
+      "sentAt": "Wysłano",
+      "deliveredAt": "Dostarczone",
+      "openedAt": "Otwarte"
+    },
+    "status": {
+      "queued": "W kolejce",
+      "sent": "Wysłano",
+      "delivered": "Dostarczono",
+      "opened": "Otwarto",
+      "clicked": "Kliknięto",
+      "bounced": "Odrzucono",
+      "failed": "Błąd"
+    }
+  }
+}

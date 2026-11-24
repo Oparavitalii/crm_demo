@@ -1,0 +1,205 @@
+name: Test
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+# Every database-backed job gets its own throwaway PostgreSQL 17 service
+# container, so CI needs no secrets at all. The values below are not secrets —
+# they only satisfy the env.ts schema and point at that container.
+env:
+  JWT_SECRET: aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+  JWT_REFRESH_SECRET: bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
+  R2_ENDPOINT: https://example.com
+  R2_ACCESS_KEY: x
+  R2_SECRET_KEY: x
+  R2_BUCKET: x
+
+jobs:
+  typecheck:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v5
+        with:
+          node-version: '20'
+          cache: 'npm'
+      - run: npm ci
+      - run: npm run typecheck
+
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v5
+        with:
+          node-version: '20'
+          cache: 'npm'
+      - run: npm ci
+      - run: npm run lint
+
+  unit-api:
+    runs-on: ubuntu-latest
+    env:
+      DATABASE_URL: postgres://x@y/z
+      DATABASE_URL_DIRECT: postgres://x@y/z
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v5
+        with:
+          node-version: '20'
+          cache: 'npm'
+      - run: npm ci
+      - run: npm run test -w @opushr/api
+
+  unit-web:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v5
+        with:
+          node-version: '20'
+          cache: 'npm'
+      - run: npm ci
+      - run: npm run test -w @opushr/web
+
+  integration-api:
+    runs-on: ubuntu-latest
+    needs: [typecheck]
+    services:
+      postgres:
+        image: postgres:17-alpine
+        env:
+          POSTGRES_USER: opushr
+          POSTGRES_PASSWORD: opushr
+          POSTGRES_DB: opushr_test
+        ports: ['5432:5432']
+        options: >-
+          --health-cmd "pg_isready -U opushr" --health-interval 5s
+          --health-timeout 5s --health-retries 10
+    env:
+      DATABASE_URL: postgres://opushr:opushr@localhost:5432/opushr_test
+      DATABASE_URL_DIRECT: postgres://opushr:opushr@localhost:5432/opushr_test
+      TEST_DATABASE_URL: postgres://opushr:opushr@localhost:5432/opushr_test
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v5
+        with:
+          node-version: '20'
+          cache: 'npm'
+      - run: npm ci
+      - name: Run migrations
+        run: npm run db:migrate -w @opushr/api
+      - name: Run integration tests
+        run: npm run test:integration -w @opushr/api
+
+  e2e:
+    # Smoke gate on every PR (unauthenticated flows + admin happy paths); the
+    # full suite across all five role projects on push to main.
+    runs-on: ubuntu-latest
+    needs: [typecheck]
+    timeout-minutes: 30
+    services:
+      postgres:
+        image: postgres:17-alpine
+        env:
+          POSTGRES_USER: opushr
+          POSTGRES_PASSWORD: opushr
+          POSTGRES_DB: opushr_e2e
+        ports: ['5432:5432']
+        options: >-
+          --health-cmd "pg_isready -U opushr" --health-interval 5s
+          --health-timeout 5s --health-retries 10
+    env:
+      DATABASE_URL: postgres://opushr:opushr@localhost:5432/opushr_e2e
+      DATABASE_URL_DIRECT: postgres://opushr:opushr@localhost:5432/opushr_e2e
+      CORS_ORIGIN: http://localhost:5173
+      APP_URL: http://localhost:5173
+      NODE_ENV: test
+      PORT: '8080'
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v5
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Cache Playwright browsers
+        id: pw-cache
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/ms-playwright
+          key: ${{ runner.os }}-playwright-${{ hashFiles('apps/web/package.json', 'package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-playwright-
+
+      - name: Install Playwright browsers (chromium only)
+        if: steps.pw-cache.outputs.cache-hit != 'true'
+        working-directory: apps/web
+        run: npx playwright install --with-deps chromium
+
+      - name: Install Playwright OS deps (cache hit path)
+        if: steps.pw-cache.outputs.cache-hit == 'true'
+        working-directory: apps/web
+        run: npx playwright install-deps chromium
+
+      - name: Run migrations
+        run: npm run db:migrate -w @opushr/api
+
+      - name: Seed E2E users and data
+        run: |
+          node apps/api/scripts/seed-e2e.mjs
+          node apps/api/scripts/seed-e2e-data.mjs
+
+      - name: Build API and web
+        run: |
+          npm run build:prod -w @opushr/api
+          npm run build -w @opushr/web
+
+      - name: Start API and web preview (background)
+        run: |
+          nohup node apps/api/dist/index.js > /tmp/api.log 2>&1 &
+          nohup npx --yes vite preview --port 5173 --strictPort --host 127.0.0.1 \
+            --outDir apps/web/dist --config apps/web/vite.config.ts \
+            > /tmp/web.log 2>&1 &
+
+      - name: Wait for stack to be ready
+        run: |
+          npx --yes wait-on -t 60000 http://localhost:8080/health http://localhost:5173 \
+            || (echo '--- API log ---'; cat /tmp/api.log; echo '--- WEB log ---'; cat /tmp/web.log; exit 1)
+
+      - name: Playwright smoke (pull requests)
+        if: github.event_name == 'pull_request'
+        working-directory: apps/web
+        env:
+          E2E_BASE_URL: http://localhost:5173
+        run: |
+          npx playwright test \
+            --project=setup --project=chromium-admin --project=chromium-unauth \
+            e2e/global.setup.ts e2e/auth.unauth.spec.ts e2e/ui-flows.spec.ts
+
+      - name: Playwright full suite (push to main)
+        if: github.event_name == 'push'
+        working-directory: apps/web
+        env:
+          E2E_BASE_URL: http://localhost:5173
+        run: |
+          npx playwright test \
+            --project=setup --project=chromium-admin --project=chromium-recruiter \
+            --project=chromium-coordinator --project=chromium-readonly --project=chromium-unauth
+
+      - name: Upload Playwright report and server logs
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: e2e-report
+          path: |
+            apps/web/playwright-report
+            /tmp/api.log
+            /tmp/web.log
+          retention-days: 7

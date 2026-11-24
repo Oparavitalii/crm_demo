@@ -1,0 +1,378 @@
+{
+  "list": {
+    "title": "Kandydaci",
+    "titleClients": "Klienci",
+    "titleAll": "Wszyscy (kandydaci + klienci)",
+    "add": "Dodaj kandydata",
+    "addClient": "Dodaj klienta",
+    "search": "Szukaj (imię, email, telefon)",
+    "filters": {
+      "all": "Wszystkie",
+      "allProjects": "Wszystkie projekty",
+      "allLegalStatuses": "Wszystkie statusy prawne",
+      "allPositions": "Wszystkie stanowiska",
+      "allRecruiters": "Wszyscy rekruterzy",
+      "allSources": "Wszystkie źródła",
+      "allStatuses": "Wszystkie statusy",
+      "reconciliationPeriodPlaceholder": "Filtruj po okresie rozliczenia",
+      "apply": "Zastosuj",
+      "clearAll": "Wyczyść",
+      "dateRange": "Zakres dat",
+      "drawerTitle": "Filtry",
+      "duplicatesOnly": "Tylko duplikaty",
+      "freelancer": "Freelancer",
+      "freelancerAll": "Wszyscy freelancerzy",
+      "hasEmail": "Email",
+      "hasPhone": "Telefon",
+      "no": "Nie",
+      "noProjects": "Brak projektów",
+      "openButton": "Filtry",
+      "recruiter": "Rekruter",
+      "source": "Źródło",
+      "status": "Status",
+      "consentAll": "Zgoda (wszystkie)",
+      "consentRodo": "Jest zgoda RODO",
+      "consentEmail": "Zgoda na e-mail",
+      "consentSms": "Zgoda na SMS",
+      "consentAny": "Dowolna zgoda",
+      "consentNone": "Brak zgody",
+      "yes": "Tak"
+    },
+    "empty": "Brak klientów",
+    "total": "Łącznie: {{count}}",
+    "duplicateColumn": "Duplikat",
+    "duplicateTooltip": "Wykryto duplikat — ten klient ma już zapis w bazie (email, telefon lub imię + nazwisko)",
+    "viewToggle": {
+      "list": "Lista",
+      "kanban": "Kanban"
+    },
+    "selectRow": "Zaznacz wiersz"
+  },
+  "fields": {
+    "firstName": "Imię",
+    "lastName": "Nazwisko",
+    "fullName": "Imię i nazwisko",
+    "email": "Email",
+    "phone": "Telefon",
+    "birthDate": "Data urodzenia",
+    "nationality": "Narodowość",
+    "workStartDate": "Data rozpoczęcia pracy",
+    "workEndDate": "Data zakończenia pracy",
+    "workEndReason": "Powód zakończenia pracy",
+    "reasonNote": "Notatka do powodu (wolny tekst)",
+    "status": "Status",
+    "source": "Źródło",
+    "recruiter": "Rekruter",
+    "project": "Projekt",
+    "projectName": "Nazwa projektu",
+    "coordinator": "Koordynator",
+    "kind": "Typ karty",
+    "notes": "Notatki",
+    "createdAt": "Dodano",
+    "housing": "Mieszkanie",
+    "submittedToVacancy": "Złożony na wakat",
+    "position": "Stanowisko",
+    "legalStatus": "Status prawny",
+    "reconciliationPeriod": "Okres rozliczenia",
+    "consent": "Zgoda",
+    "documentsSubmittedAt": "Data złożenia dokumentów",
+    "arrivedAt": "Data przyjazdu",
+    "workOutcome": "Wynik odpracowania",
+    "payoutStatus": "Status wypłaty",
+    "paymentStatus": "Wypłacone",
+    "retention": "Utrzymanie kandydata",
+    "messenger": "Komunikator (TG/WA/Viber)",
+    "messengerPlaceholder": "TG: @username · WA: +48… · Viber: +380…",
+    "experience": "Doświadczenie zawodowe",
+    "experiencePlaceholder": "Np.: 2 lata w fabryce w Polsce, 1 rok jako kierowca…",
+    "kind": "Typ",
+    "externalId": "External ID",
+    "cvUrl": "CV",
+    "photoUrl": "Zdjęcie",
+    "updatedAt": "Zaktualizowano",
+    "consentId": "Zgoda",
+    "processingRestricted": "Ograniczenie przetwarzania",
+    "anonymizedAt": "Zanonimizowano"
+  },
+  "kind": {
+    "candidate": "Kandydat",
+    "client": "Klient"
+  },
+  "arrivalStatus": {
+    "arrived": "Przyjechał",
+    "no_show": "Nie przyjechał"
+  },
+  "lookup": {
+    "add": "+ Dodaj nową",
+    "addTitle": "Nowa wartość — {{field}}",
+    "labelPl": "Etykieta (PL)",
+    "labelUa": "Etykieta (UA)",
+    "errors": {
+      "bothLabelsRequired": "Wypełnij obie etykiety"
+    }
+  },
+  "directory": {
+    "inactive": " (nieaktywny)"
+  },
+  "comments": {
+    "title": "Komentarze",
+    "placeholder": "Napisz komentarz…",
+    "submit": "Dodaj komentarz",
+    "empty": "Brak komentarzy",
+    "deleteConfirm": "Usunąć ten komentarz?",
+    "deleted": "Komentarz usunięty",
+    "created": "Komentarz dodany",
+    "unknownAuthor": "Nieznany autor",
+    "importedAuthor": "Zaimportowano",
+    "bodyRequired": "Treść jest wymagana"
+  },
+  "housing": {
+    "our": "Nasze",
+    "own": "Własne"
+  },
+  "consent": {
+    "title": "Zgoda na komunikację marketingową",
+    "caption": "Zapisz, że kandydat wyraził zgodę offline (ustnie lub na papierze). To tylko utrwala zgodę — żadna wiadomość nie zostaje wysłana.",
+    "email": "Zgoda na wysyłkę e-mail",
+    "sms": "Zgoda na wysyłkę SMS",
+    "basis": "Podstawa zgody",
+    "basisPlaceholder": "Wybierz podstawę…",
+    "basisRequired": "Wybierz podstawę zgody",
+    "manual_verbal": "Ustnie / telefonicznie",
+    "manual_paper": "Podpisano na papierze",
+    "sectionTitle": "Status zgód",
+    "rodoShort": "RODO",
+    "emailShort": "Email",
+    "smsShort": "SMS",
+    "rodoOn": "Jest zgoda RODO (przetwarzanie danych)",
+    "rodoOff": "Brak zgody RODO — podstawa przetwarzania nieudokumentowana",
+    "emailOn": "Jest zgoda na wysyłkę e-mail",
+    "emailOff": "Brak zgody na wysyłkę e-mail",
+    "smsOn": "Jest zgoda na wysyłkę SMS",
+    "smsOff": "Brak zgody na wysyłkę SMS",
+    "recordButton": "Zapisz zgodę",
+    "recordSubmit": "Zapisz",
+    "recorded": "Zgoda zapisana",
+    "copyLinkButton": "Kopiuj link zgody",
+    "linkCopied": "Link zgody skopiowany do schowka",
+    "linkCopyFailed": "Nie udało się skopiować automatycznie — oto link",
+    "sendButton": "Wyślij potwierdzenie na e-mail",
+    "sendSuccess": "E-mail wysłany",
+    "noEmail": "brak adresu e-mail",
+    "adminButton": "Zmień zgodę (admin)",
+    "adminCaption": "Zmiana jest logowana.",
+    "adminSave": "Zapisz",
+    "adminSaved": "Zgoda zaktualizowana"
+  },
+  "recruiterType": {
+    "freelance": "Freelancer",
+    "staff": "Etatowy"
+  },
+  "lifecycle": {
+    "title": "Etapy",
+    "documents": "Dokumenty wysłane",
+    "documentsPending": "Nie wysłano",
+    "arrived": "Dojechał",
+    "noShow": "Nie dojechał",
+    "arrivalPending": "Oczekuje",
+    "housing": "Mieszkanie",
+    "ourHousing": "Nasze",
+    "ownHousing": "Własne",
+    "housingPending": "Nie wybrano",
+    "project": "Projekt",
+    "projectPending": "Nie wybrano",
+    "departure": "Wyjazd",
+    "departurePending": "Nie wybrano",
+    "employment": "Praca",
+    "employedSince": "Pracuje od",
+    "reEmployedSince": "Powtórnie od",
+    "dismissedOn": "Zwolniony",
+    "blacklistedOn": "Czarna lista",
+    "employmentPending": "Jeszcze nie pracuje"
+  },
+  "kind": {
+    "candidate": "Kandydat",
+    "client": "Klient"
+  },
+  "status": {
+    "new": "Nowy",
+    "in_progress": "W trakcie",
+    "documents_submitted": "Dokumenty wysłane",
+    "cancelled": "Anulowany",
+    "employed": "Pracuje",
+    "re_employed": "Powtórne zatrudnienie",
+    "dismissed": "Zwolniony",
+    "blacklist": "Czarna lista"
+  },
+  "hire": {
+    "button": "Zatrudnij",
+    "title": "Zatrudnienie",
+    "submit": "Zatrudnij",
+    "success": "Zatrudniono",
+    "alreadyEmployed": "Już zatrudniony",
+    "validationError": "Wypełnij datę i mieszkanie",
+    "employedAt": "Data rozpoczęcia",
+    "housing": "Mieszkanie",
+    "project": "Projekt",
+    "coordinator": "Koordynator"
+  },
+  "rehire": {
+    "button": "Powtórnie zatrudnij",
+    "title": "Powtórne zatrudnienie",
+    "submit": "Powtórnie zatrudnij",
+    "success": "Powtórnie zatrudniono"
+  },
+  "cancel": {
+    "button": "Anuluj",
+    "title": "Anulowanie",
+    "submit": "Anuluj",
+    "submitBlacklist": "Dodaj do czarnej listy",
+    "success": "Anulowano",
+    "blacklistedSuccess": "Dodano do czarnej listy",
+    "reason": "Powód",
+    "reasonRequired": "Wybierz powód",
+    "note": "Komentarz",
+    "noteRequired": "Opisz powód",
+    "noteOptional": "(opcjonalnie, do 200 znaków)"
+  },
+  "bulk": {
+    "selectedCount": "{{count}} wybr.",
+    "clear": "Wyczyść zaznaczenie",
+    "changeStatus": {
+      "button": "Zmień status ({{count}})",
+      "buttonShort": "Status",
+      "title": "Zmiana statusu zaznaczonych",
+      "hint": "Zaznaczonych: {{count}}. Przejście do „Pracuje” / „Ponownie pracuje” możliwe tylko z karty kandydata (wymaga mieszkania, projektu, koordynatora).",
+      "target": "Nowy status",
+      "reasonNote": "Powód (wspólny dla wszystkich)",
+      "reasonNoteHint": "Tekst zostanie zapisany jako reason_note dla każdego z {{count}} wybranych kandydatów.",
+      "reasonRequired": "Wymagane",
+      "blacklistWarning": "Uwaga: czarna lista to terminalny status — wycofanie jest możliwe tylko przez admina i pojedynczo.",
+      "workStageWarning": "Uwaga: zbiorcza zmiana na „Pracuje” / „Ponownie pracuje” nie ustawia mieszkania, projektu ani koordynatora. Aby je przypisać, użyj okna „Zatrudnij” na karcie konkretnego kandydata.",
+      "submit": "Zastosuj",
+      "result": "Zmieniono status: {{ok}} OK, {{failed}} błędów"
+    },
+    "consentRequest": {
+      "button": "Prośby o zgodę ({{count}})",
+      "buttonShort": "Zgody",
+      "title": "Wyślij prośby o zgodę",
+      "confirm": "Wysłać e-mail z linkiem do potwierdzenia zgody do {{count}} kandydatów? Kandydaci bez adresu e-mail zostaną pominięci.",
+      "submit": "Wyślij",
+      "result": "Wysłano: {{sent}}, bez e-maila: {{skipped}}, błędów: {{failed}}",
+      "tooMany": "Maksymalnie {{max}} naraz. Zmniejsz zaznaczenie."
+    },
+    "delete": {
+      "button": "Usuń ({{count}})",
+      "buttonShort": "Usuń",
+      "title": "Usuń zaznaczonych",
+      "confirm": "Czy na pewno usunąć (zanonimizować) {{count}} kandydatów? Operacja nieodwracalna.",
+      "submit": "Usuń",
+      "result": "Usunięto: {{ok}} OK, {{failed}} błędów"
+    }
+  },
+  "source": {
+    "facebook": "Facebook",
+    "work_ua": "Work.ua",
+    "flagma": "Flagma",
+    "website": "Formularz",
+    "manual": "Dodano ręcznie",
+    "unknown": "Nieznane źródło",
+    "instagram": "Instagram",
+    "referral": "Polecenie"
+  },
+  "noShowReasons": {
+    "lost_contact": "Utrata kontaktu",
+    "personal_reasons": "Osobiste okoliczności",
+    "unsuitable_conditions": "Nieodpowiednie warunki",
+    "client_no_longer_needs": "Klient nie potrzebuje",
+    "blacklist": "Czarna lista",
+    "legalization_rejected": "Odrzucenie legalizacji",
+    "legalization_problem": "Problem z legalizacją",
+    "other": "Inne"
+  },
+  "form": {
+    "createTitle": "Nowy klient",
+    "editTitle": "Edycja klienta",
+    "submitCreate": "Dodaj",
+    "submitSave": "Zapisz",
+    "cancel": "Anuluj",
+    "saved": "Zapisano",
+    "created": "Klient dodany",
+    "firstNameRequired": "Imię jest wymagane",
+    "lastNameRequired": "Nazwisko jest wymagane",
+    "sourceRequired": "Wybierz źródło (analityka zależy od tego pola)",
+    "validationFailed": "Formularz nie został zapisany — sprawdź zaznaczone pola",
+    "recruiterRequired": "Wybierz rekrutera",
+    "addProject": "Dodaj projekt",
+    "addProjectTitle": "Nowy projekt"
+  },
+  "detail": {
+    "edit": "Edytuj",
+    "delete": "Usuń",
+    "actionsMenu": "Akcje",
+    "deleted": "Klient usunięty",
+    "deleteConfirm": "Czy na pewno usunąć tego klienta? Dane osobowe (imię, email, telefon, CV) zostaną nieodwracalnie usunięte. Historia zwolnień i statystyki zostaną zachowane.",
+    "back": "Powrót do listy",
+    "fullTab": "Wszystko",
+    "tabs": {
+      "vacancy": "Wakat",
+      "tasks": "Zadania"
+    },
+    "vacancy": {
+      "notAssigned": "Brak przypisanej wakancji",
+      "title": "Tytuł",
+      "location": "Lokalizacja",
+      "startDate": "Data startu",
+      "endDate": "Data zakończenia",
+      "status": "Status",
+      "statusOpen": "Otwarty",
+      "statusClosed": "Zamknięty",
+      "documentsSubmittedAt": "Dokumenty wysłane",
+      "open": "Otwórz wakat"
+    },
+    "sections": {
+      "personal": "Dane osobowe",
+      "work": "Praca",
+      "placements": "Rozmieszczenia",
+      "dismissals": "Zwolnienia",
+      "audit": "Historia zmian"
+    },
+    "audit": {
+      "empty": "Brak zapisów",
+      "createdAt": "Data",
+      "action": "Akcja",
+      "actor": "Użytkownik"
+    },
+    "fields": {
+      "freelancer": "Freelancer"
+    }
+  },
+  "duplicate": {
+    "title": "Możliwy duplikat",
+    "prompt": "Znaleziono podobnych klientów w bazie:",
+    "matchedBy": "Pasuje:",
+    "viewExisting": "Zobacz istniejącego",
+    "createAnyway": "Dodaj mimo to",
+    "match": {
+      "email": "email",
+      "phone": "telefon",
+      "name": "imię i nazwisko"
+    }
+  },
+  "kanban": {
+    "title": "Kanban klientów",
+    "statusUpdated": "Status zaktualizowany",
+    "dropHere": "Upuść tutaj",
+    "moreRecords": "+ {{count}} więcej",
+    "noCards": "Brak"
+  },
+  "errors": {
+    "hasPlacements": "Nie można usunąć — klient ma przypisane zakwaterowania. Najpierw usuń zakwaterowania lub poczekaj na anonimizację (FAZA 7).",
+    "notFound": "Klient nie istnieje",
+    "noPermission": "Brak uprawnień do tej operacji",
+    "statusUpdateFailed": "Nie udało się zmienić statusu",
+    "fullNameInvalid": "Wpisz imię i nazwisko (np. Jan Kowalski)",
+    "loadFailed": "Nie udało się załadować danych",
+    "retry": "Ponów"
+  }
+}

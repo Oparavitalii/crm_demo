@@ -1,0 +1,43 @@
+{
+  "title": "Candidate application",
+  "loadingRecruiter": "Loading...",
+  "handledBy": "Your application will be handled by: {{name}}",
+  "generalForm": "Your application will reach an OPUS HR coordinator.",
+  "fields": {
+    "name": "First and last name",
+    "birthDate": "Date of birth",
+    "nationality": "Nationality",
+    "phone": "Phone number",
+    "email": "Email",
+    "messenger": "Messenger (WhatsApp / Telegram / Viber)",
+    "experience": "Previous work experience"
+  },
+  "placeholders": {
+    "name": "John Doe",
+    "birthDate": "01.01.1990",
+    "nationality": "Select or type",
+    "phone": "+48 600 123 456",
+    "email": "john@example.com",
+    "messenger": "TG: @john, WA: +48...",
+    "experience": "Briefly describe where and as whom you have worked..."
+  },
+  "consent": {
+    "prefix": "I have read the",
+    "linkLabel": "privacy policy",
+    "suffix": "and consent to the processing of my data.",
+    "sms": "I agree to receive SMS messages with job offers from OPUS HR (optional)."
+  },
+  "submit": "Submit application",
+  "success": {
+    "title": "Thank you!",
+    "body": "We received your application. A recruiter will contact you soon."
+  },
+  "errors": {
+    "required": "This field is required",
+    "emailOrPhone": "Provide email or phone",
+    "consentRequired": "Consent to data processing is required",
+    "generic": "An error occurred — please try again or contact us directly.",
+    "tooMany": "Too many attempts. Wait a minute and try again."
+  },
+  "language": "Form language"
+}

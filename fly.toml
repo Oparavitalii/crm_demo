@@ -1,0 +1,61 @@
+# Fly.io config for the PUBLIC DEMO app. It is a separate app with its own
+# database; it never shares anything with a production deployment.
+# Rename `app` before the first `fly launch` if the name is taken.
+app = "opushr-demo"
+primary_region = "fra"
+
+[build]
+  dockerfile = "apps/api/Dockerfile"
+
+# Runs once per deploy in a temporary machine BEFORE the new app/cron machines
+# start. Applies pending Drizzle migrations; if it fails the deploy is aborted
+# and the previous version keeps running. Uses the programmatic migrator
+# (src/scripts/migrate.ts) because drizzle-kit is a devDependency and is not in
+# the production image. Idempotent — tracks applied migrations in
+# __drizzle_migrations.
+[deploy]
+  release_command = "node apps/api/dist/scripts/migrate.js"
+
+[env]
+  PORT = "8080"
+  NODE_ENV = "production"
+  # Demo mode: e-mail / SMS / file storage become local no-ops, account-security
+  # endpoints are blocked for the shared guest login, and the cron worker
+  # resets the demo data every night. See README "Demo mode".
+  DEMO_MODE = "true"
+
+# Two processes from one image: HTTP `app` and a long-running `cron` worker.
+# `[processes]` overrides the image CMD. Direct node invocations — the npm
+# wrapper would stay resident for nothing.
+[processes]
+  app = "node apps/api/dist/index.js"
+  cron = "node apps/api/dist/cron/scheduler.js"
+
+[http_service]
+  internal_port = 8080
+  force_https = true
+  auto_stop_machines = "stop"
+  auto_start_machines = true
+  min_machines_running = 0
+  processes = ["app"]
+
+  [[http_service.checks]]
+    grace_period = "10s"
+    interval = "30s"
+    method = "GET"
+    timeout = "5s"
+    path = "/health"
+
+# 512 MB for the API: each pg connection with TLS costs a couple of MB of Node
+# buffers, so db/client.ts `max` and this value move together.
+[[vm]]
+  cpu_kind = "shared"
+  cpus = 1
+  memory_mb = 512
+  processes = ["app"]
+
+[[vm]]
+  cpu_kind = "shared"
+  cpus = 1
+  memory_mb = 256
+  processes = ["cron"]

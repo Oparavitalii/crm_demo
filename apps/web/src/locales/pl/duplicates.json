@@ -1,0 +1,23 @@
+{
+  "title": "Duplikaty dla: {{name}}",
+  "empty": "Brak duplikatów (lub zostały już oznaczone jako nie-duplikaty).",
+  "deleteTitle": "Usuń zapis",
+  "deleteConfirm": "Na pewno usunąć \"{{name}}\"? Operacja nieodwracalna.",
+  "deleted": "Usunięto",
+  "markedNotDuplicate": "Oznaczono jako \"nie duplikat\"",
+  "cols": {
+    "name": "Imię i nazwisko",
+    "contact": "Kontakt",
+    "matchedBy": "Pasuje"
+  },
+  "match": {
+    "email": "email",
+    "phone": "telefon",
+    "name": "imię"
+  },
+  "actions": {
+    "open": "Otwórz",
+    "notDuplicate": "To nie duplikat"
+  },
+  "button": "Zobacz duplikaty"
+}

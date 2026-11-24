@@ -1,0 +1,192 @@
+{
+  "housing": {
+    "title": "Житло",
+    "ourHousing": "Наше житло",
+    "ownHousing": "Власне житло",
+    "empty": "Немає мешканців",
+    "tableName": "Ім'я та прізвище",
+    "tableStatus": "Статус",
+    "tableUpdatedAt": "Оновлено",
+    "showMore": "Показати ще",
+    "showing": "Показано {{count}} з {{total}}"
+  },
+  "dismissalsRegistry": {
+    "title": "Реєстр звільнень / Звіт утримання",
+    "exportCsv": "Експорт CSV",
+    "total": "Всього: {{count}}",
+    "empty": "Немає звільнень за заданими критеріями",
+    "filters": {
+      "search": "Пошук",
+      "searchPlaceholder": "Ім'я або прізвище",
+      "source": "Джерело",
+      "allSources": "Усі джерела",
+      "project": "Проєкт",
+      "allProjects": "Усі проєкти",
+      "recruiter": "Рекрутер",
+      "allRecruiters": "Усі рекрутери",
+      "coordinator": "Координатор",
+      "allCoordinators": "Усі координатори",
+      "reasonCode": "Причина (код)",
+      "allReasons": "Усі причини",
+      "dateFrom": "Від",
+      "dateTo": "До",
+      "dateRange": "Діапазон дат звільнення",
+      "reason": "Причина (текст)",
+      "reasonPlaceholder": "Пошук за текстом…",
+      "recordedBy": "Зареєстрував",
+      "candidate": "Клієнт",
+      "all": "Усі"
+    },
+    "fields": {
+      "candidate": "Клієнт",
+      "project": "Проєкт",
+      "recruiter": "Рекрутер",
+      "coordinator": "Координатор",
+      "daysWorked": "Дні роботи",
+      "source": "Джерело",
+      "reason": "Причина",
+      "reasonNote": "Нотатка",
+      "dismissedAt": "Дата звільнення",
+      "recordedBy": "Зареєстрував"
+    }
+  },
+  "dismissals": {
+    "export": "Експорт Excel",
+    "exportSuccess": "Завантажено Excel ({{count}} записів)",
+    "exportSuccessNoCount": "Excel завантажено",
+    "exportError": "Не вдалося експортувати",
+    "list": {
+      "title": "Звільнення",
+      "add": "Додати звільнення",
+      "empty": "Немає звільнень"
+    },
+    "fields": {
+      "dismissedAt": "Дата звільнення",
+      "reason": "Причина",
+      "reasonPlaceholder": "Виберіть причину…",
+      "reasonOther": "Інша причина (опишіть)",
+      "recordedBy": "Зареєстрував(ла)",
+      "notes": "Нотатки"
+    },
+    "reasons": {
+      "employee_resigned": "З ініціативи працівника",
+      "returned_home": "Повернення додому",
+      "found_other_job": "Знайшов іншу роботу",
+      "low_performance": "Низька продуктивність",
+      "absenteeism": "Прогули / не з'явився",
+      "misconduct": "Порушення регламенту",
+      "contract_ended": "Закінчення контракту",
+      "health_issues": "Проблеми зі здоров'ям",
+      "conflict": "Конфлікт",
+      "other": "Інша причина"
+    },
+    "form": {
+      "createTitle": "Нове звільнення",
+      "editTitle": "Редагування звільнення",
+      "submit": "Зберегти",
+      "cancel": "Скасувати",
+      "saved": "Звільнення збережено",
+      "created": "Звільнення додано",
+      "reasonRequired": "Виберіть причину звільнення",
+      "reasonOtherRequired": "Опишіть іншу причину"
+    },
+    "detail": {
+      "edit": "Редагувати",
+      "delete": "Видалити",
+      "deleted": "Звільнення видалено",
+      "deleteConfirm": "Видалити це звільнення?"
+    }
+  },
+  "vacancies": {
+    "list": {
+      "title": "Вакансії",
+      "add": "Додати вакансію",
+      "empty": "Немає вакансій",
+      "total": "Всього: {{count}}",
+      "filters": {
+        "search": "Пошук (посада, місцезнаходження)",
+        "isOpen": "Статус",
+        "open": "Відкриті",
+        "closed": "Закриті",
+        "all": "Всі",
+        "dateCreated": "Дата додавання",
+        "dateStart": "Дата початку"
+      }
+    },
+    "fields": {
+      "title": "Посада",
+      "project": "Проєкт",
+      "location": "Місцезнаходження",
+      "requiredCount": "Необхідна кількість осіб",
+      "peopleCount": "Кількість осіб",
+      "startDate": "Дата початку",
+      "endDate": "Дата закінчення",
+      "description": "Опис",
+      "isOpen": "Відкрита",
+      "recruitedCount": "Зрекрутовано",
+      "details": "Деталі",
+      "createdBy": "Додано",
+      "createdAt": "Дата додавання",
+      "notes": "Коментар"
+    },
+    "form": {
+      "createTitle": "Нова вакансія",
+      "editTitle": "Редагування вакансії",
+      "submit": "Зберегти",
+      "cancel": "Скасувати",
+      "saved": "Вакансію збережено",
+      "created": "Вакансію додано"
+    },
+    "detail": {
+      "back": "Назад до вакансій",
+      "edit": "Редагувати",
+      "delete": "Видалити",
+      "deleted": "Вакансію видалено",
+      "deleteConfirm": "Видалити цю вакансію?",
+      "open": "Відкрита",
+      "closed": "Закрита",
+      "slotsTitle": "Місця (слоти)",
+      "reserveSlot": "Зарезервувати місце",
+      "infoTab": "Інфо",
+      "fullTab": "Все",
+      "sections": {
+        "basic": "Основна інформація",
+        "slots": "Слоти",
+        "fillRate": "Заповнення",
+        "audit": "Журнал подій"
+      },
+      "fillRateText": "Заповнено {{filled}} з {{required}} ({{percent}}%)",
+      "auditEmpty": "Журнал порожній"
+    },
+    "slots": {
+      "recruiter": "Рекрутер",
+      "candidate": "Клієнт",
+      "reservedAt": "Зарезервовано",
+      "filledAt": "Заповнено",
+      "cancelledAt": "Скасовано",
+      "fill": "Заповнити",
+      "cancel": "Скасувати резервацію",
+      "empty": "Немає зарезервованих місць",
+      "assign": "Призначити клієнта",
+      "assignTitle": "Призначити клієнта на слот",
+      "assignHint": "Виберіть клієнта, якого розміщуєте в цьому слоті. Слот буде позначено як заповнений.",
+      "pickCandidate": "Виберіть клієнта",
+      "filled": "Слот заповнено",
+      "notes": "Коментар"
+    },
+    "reserveModal": {
+      "hint": "Виберіть особу для цього слота або зарезервуйте порожнє місце.",
+      "modeEmpty": "Порожнє",
+      "modeCandidate": "Клієнт",
+      "errorFull": "Вакансія заповнена",
+      "errorClosed": "Вакансія закрита"
+    },
+    "submittedCandidates": {
+      "tabTitle": "Подані кандидати",
+      "empty": "Немає заявок",
+      "tableName": "Кандидат",
+      "tableStatus": "Статус",
+      "tableSubmittedAt": "Подано"
+    }
+  }
+}

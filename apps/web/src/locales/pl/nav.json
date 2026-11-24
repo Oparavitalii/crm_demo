@@ -1,0 +1,52 @@
+{
+  "dashboard": "Panel",
+  "analytics": "Analityka",
+  "candidates": "Kandydaci",
+  "clients": "Klienci",
+  "allPeople": "Wszyscy",
+  "communications": "Komunikacja",
+  "vacancies": "Wyjścia",
+  "projects": "Projekty",
+  "accommodations": "Zakwaterowanie",
+  "dismissalsRegistry": "Ewidencja zwolnień",
+  "tasks": "Zadania",
+  "failedCandidates": "Nieudani kandydaci",
+  "employerInquiries": "Pracodawcy",
+  "admin": "Administracja",
+  "adminUsers": "Użytkownicy",
+  "auditLog": "Dziennik zdarzeń",
+  "comingSoon": "Wkrótce dostępne",
+  "documents": "Dokumenty",
+  "adminDocuments": "Zarządzanie dokumentami",
+  "more": "Więcej",
+  "settingsStatuses": "Statusy",
+  "pinAction": "Przypnij",
+  "unpinAction": "Odepnij",
+  "expandAction": "Rozwiń",
+  "collapseAction": "Zwiń",
+  "groups": {
+    "pinned": "Przypięte",
+    "main": "Główna",
+    "acquisition": "Pozyskiwanie",
+    "operations": "Operacje",
+    "communication": "Komunikacja",
+    "documents": "Dokumenty",
+    "administration": "Administracja"
+  },
+  "analyticsTabs": {
+    "candidates": "Klienci",
+    "living": "Zakwaterowanie",
+    "vacancies": "Wyjścia",
+    "employers": "Pracodawcy",
+    "admin": "Rekruterzy"
+  },
+  "sources": {
+    "facebook": "Facebook",
+    "instagram": "Instagram",
+    "website": "Formularz www",
+    "work_ua": "Work.ua",
+    "flagma": "Flagma",
+    "referral": "Polecenie",
+    "unknown": "Inne / nieznane"
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "app": { "title": "OPUS HR CRM" },
+  "actions": {
+    "save": "Zapisz",
+    "cancel": "Anuluj",
+    "delete": "Usuń",
+    "close": "Zamknij",
+    "profile": "Profil",
+    "myStats": "Moje statystyki",
+    "logout": "Wyloguj",
+    "back": "Powrót",
+    "submit": "Zatwierdź"
+  },
+  "loading": "Ładowanie...",
+  "language": "Język",
+  "user": "Użytkownik",
+  "theme": {
+    "toggleDark": "Tryb ciemny",
+    "toggleLight": "Tryb jasny"
+  },
+  "pagination": {
+    "jumpTo": "Przejdź do strony",
+    "go": "Przejdź"
+  },
+  "columns": {
+    "title": "Kolumny",
+    "showAll": "Pokaż wszystkie"
+  },
+  "dateRange": {
+    "all": "Wszystko",
+    "today": "Dziś",
+    "7d": "7 dni",
+    "30d": "30 dni",
+    "thisMonth": "Ten miesiąc",
+    "lastMonth": "Poprzedni miesiąc",
+    "quarter": "Kwartał",
+    "custom": "Własny",
+    "customPlaceholder": "Wybierz zakres dat"
+  }
+}

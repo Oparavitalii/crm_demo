@@ -1,0 +1,47 @@
+# Dependabot weekly checks for the OPUS HR CRM monorepo.
+# - npm: monorepo root (covers all workspaces via package-lock.json)
+# - github-actions: workflow files in .github/workflows/
+#
+# We open at most 5 open PRs per ecosystem at a time so the queue stays
+# reviewable. Patch-level updates auto-group; major bumps land as their own PR
+# so the security/breaking-change risk is reviewed in isolation.
+
+version: 2
+updates:
+  - package-ecosystem: npm
+    directory: /
+    schedule:
+      interval: weekly
+      day: monday
+      time: '06:00'
+      timezone: Europe/Warsaw
+    open-pull-requests-limit: 5
+    labels:
+      - dependencies
+      - npm
+    commit-message:
+      prefix: chore(deps)
+      include: scope
+    groups:
+      patch-updates:
+        update-types:
+          - patch
+      minor-dev-deps:
+        dependency-type: development
+        update-types:
+          - minor
+
+  - package-ecosystem: github-actions
+    directory: /
+    schedule:
+      interval: weekly
+      day: monday
+      time: '06:00'
+      timezone: Europe/Warsaw
+    open-pull-requests-limit: 3
+    labels:
+      - dependencies
+      - github-actions
+    commit-message:
+      prefix: ci(deps)
+      include: scope

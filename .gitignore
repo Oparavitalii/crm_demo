@@ -1,0 +1,88 @@
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+
+# dependencies
+/node_modules
+**/node_modules
+/.pnp
+.pnp.js
+
+# TypeScript build info
+**/*.tsbuildinfo
+
+# testing
+/coverage
+
+# production
+/build
+
+# misc
+.DS_Store
+
+# env files — never commit secrets
+.env
+.env.*
+!.env.example
+
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# build outputs
+**/dist/
+**/.vite/
+**/.turbo/
+
+# logs
+*.log
+
+# claude runtime locks (scheduled tasks / loop state)
+.claude/*.lock
+
+# editor
+.idea/
+*.swp
+
+# OS
+Thumbs.db
+
+# coverage
+**/coverage/
+
+# Playwright MCP testing artifacts (snapshots, console logs)
+.playwright-mcp/
+
+# Playwright E2E test outputs and stored auth state (session tokens — sensitive)
+apps/web/e2e/.auth/
+apps/web/e2e-screenshots/
+apps/web/playwright-report/
+apps/web/test-results/
+
+# Ad-hoc binaries at repo root (must live in tmp/screenshots/, docs/assets/, or .playwright-mcp/)
+/*.png
+/*.jpg
+/*.jpeg
+/*.gif
+/*.webp
+/*.pdf
+
+# Spreadsheets / PDFs anywhere under docs/ — likely candidate PII, RODO
+# risk. The ** glob also covers docs/Archive/ and any future subfolders.
+# Put truly public assets under docs/assets/ if they ever need to ship.
+docs/**/*.xlsx
+docs/**/*.xls
+docs/**/*.pdf
+
+# Ad-hoc throwaway scripts and debug screenshots (per CLAUDE.md workspace hygiene)
+/tmp/
+
+# Coverage output (per-workspace)
+coverage/
+apps/*/coverage/
+
+# local tooling / scratch
+.claude/
+.superpowers/
+.vscode/
+*.sql.gz
+*.sql.gz.enc
+*.dump

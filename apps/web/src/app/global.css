@@ -1,0 +1,148 @@
+/* Global UI polish — adds depth and subtle entrance animation to dashboard panels.
+ * Designed to be unobtrusive: no scroll-linked motion, just a one-time mount fade
+ * and consistent hover lift on cards. Respects prefers-reduced-motion. */
+
+:root {
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-card: 200ms var(--ease-out-expo);
+}
+
+/* Fade-up on mount — applied to dashboard panels via [data-reveal] attribute.
+ * No JS / IntersectionObserver — pure CSS animation that runs once on render.
+ * Stagger via inline style="animation-delay: 60ms" etc. */
+[data-reveal] {
+  animation: reveal-up 360ms var(--ease-out-expo) both;
+}
+
+@keyframes reveal-up {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Card hover lift — applied via className="hover-lift" on Mantine Card.
+ * Subtle: 2px up + slightly stronger shadow. Reverts smoothly on mouse-out. */
+.hover-lift {
+  transition:
+    transform var(--transition-card),
+    box-shadow var(--transition-card),
+    border-color var(--transition-card);
+}
+
+/* Only lift where a real pointer can hover. On touch, `:hover` sticks after a
+   tap — the card would stay lifted until you tap elsewhere. */
+@media (hover: hover) {
+  .hover-lift:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--mantine-shadow-md);
+  }
+}
+
+/* Respect reduced motion preference — disable all polish animations. */
+@media (prefers-reduced-motion: reduce) {
+  [data-reveal] {
+    animation: none;
+  }
+  .hover-lift {
+    transition: none;
+  }
+  .hover-lift:hover {
+    transform: none;
+  }
+}
+
+/* Inline-edit cell — pencil icon stays invisible until the user hovers the
+   cell. Keeps the table visually clean while signaling editability on demand.
+   On touch there is no hover: reveal-on-hover would either stick after a tap or
+   hide the affordance entirely, so we show the pencil at rest instead. */
+.inline-edit-cell .inline-edit-icon {
+  opacity: 0;
+  transition: opacity 120ms ease;
+}
+@media (hover: hover) {
+  .inline-edit-cell:hover .inline-edit-icon {
+    opacity: 0.6;
+  }
+}
+@media (hover: none) {
+  .inline-edit-cell .inline-edit-icon {
+    opacity: 0.6;
+  }
+}
+
+/* Mobile foundation: shrink base font on <md so rem-based components scale together.
+   Also removes tap-highlight flash and improves touch responsiveness. The
+   `overflow-x: clip` on body is the belt for any rogue child element that
+   would otherwise produce horizontal scroll on phones (`clip` vs `hidden`
+   keeps sticky AppShell.Header working). The `min-width: 0` on the AppShell
+   Main + Navbar is the suspenders — flex children default to min-content,
+   which lets long tables / kanban columns push the layout past viewport. */
+@media (max-width: 63.99em) {
+  html {
+    font-size: 14px;
+  }
+  body {
+    -webkit-tap-highlight-color: transparent;
+    overflow-x: clip;
+  }
+  .mantine-AppShell-main,
+  .mantine-AppShell-main > * {
+    min-width: 0;
+    max-width: 100%;
+  }
+  /* Pages built on Mantine tables — keep them scrollable horizontally
+     INSIDE their own container instead of pushing the whole page. */
+  .mantine-Table-table {
+    display: block;
+    overflow-x: auto;
+  }
+  button,
+  a,
+  .mantine-NavLink-root {
+    touch-action: manipulation;
+  }
+  /* iOS auto-zooms the page when a focused input's font-size is < 16px.
+     With the 14px mobile base, Mantine inputs compute to ~12px, so every
+     tap into a field zoomed the viewport in (and jumped on blur). Forcing
+     the focusable controls themselves to 16px removes the trigger while
+     labels and the rest of the UI keep the compact scale. */
+  input:not([type='checkbox']):not([type='radio']):not([type='range']),
+  select,
+  textarea,
+  [contenteditable='true'] {
+    font-size: 16px !important;
+  }
+}
+
+/* Very narrow phones (<= 22.5em ~ 360px): drop one more step so titles and
+   buttons stop wrapping awkwardly into 2 lines. */
+@media (max-width: 22.5em) {
+  html {
+    font-size: 13px;
+  }
+}
+
+/* Safe-area helpers for iOS notch / home indicator. */
+.safe-area-pb {
+  padding-bottom: env(safe-area-inset-bottom);
+}
+.safe-area-pt {
+  padding-top: env(safe-area-inset-top);
+}
+
+/* Touch: kill sticky row highlight. Mantine's own <Table> guards its
+   highlightOnHover with `@media (hover: hover)` (and uses :active on touch),
+   but mantine-datatable emits a bare `tr:hover` with no guard — so on a phone
+   the last-tapped list row stays highlighted until the next tap. The leading
+   `.mantine-datatable` raises specificity above the library rule so this wins
+   regardless of stylesheet import order. */
+@media (hover: none) {
+  .mantine-datatable .mantine-datatable-table[data-highlight-on-hover] tbody tr:hover {
+    background-color: transparent;
+  }
+}

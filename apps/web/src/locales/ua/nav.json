@@ -1,0 +1,52 @@
+{
+  "dashboard": "Панель",
+  "analytics": "Аналітика",
+  "candidates": "Кандидати",
+  "clients": "Клієнти",
+  "allPeople": "Всі",
+  "communications": "Комунікація",
+  "vacancies": "Виходи",
+  "projects": "Проєкти",
+  "accommodations": "Житло",
+  "dismissalsRegistry": "Реєстр звільнень",
+  "tasks": "Завдання",
+  "failedCandidates": "Невдалі кандидати",
+  "employerInquiries": "Роботодавці",
+  "admin": "Адміністрування",
+  "adminUsers": "Користувачі",
+  "auditLog": "Журнал подій",
+  "comingSoon": "Скоро буде",
+  "documents": "Документи",
+  "adminDocuments": "Управління документами",
+  "more": "Більше",
+  "settingsStatuses": "Статуси",
+  "pinAction": "Закріпити",
+  "unpinAction": "Відкріпити",
+  "expandAction": "Розгорнути",
+  "collapseAction": "Згорнути",
+  "groups": {
+    "pinned": "Закріплені",
+    "main": "Головна",
+    "acquisition": "Залучення",
+    "operations": "Операції",
+    "communication": "Комунікація",
+    "documents": "Документи",
+    "administration": "Адміністрування"
+  },
+  "analyticsTabs": {
+    "candidates": "Клієнти",
+    "living": "Житло",
+    "vacancies": "Виходи",
+    "employers": "Роботодавці",
+    "admin": "Рекрутери"
+  },
+  "sources": {
+    "facebook": "Facebook",
+    "instagram": "Instagram",
+    "website": "Форма на сайті",
+    "work_ua": "Work.ua",
+    "flagma": "Flagma",
+    "referral": "За рекомендацією",
+    "unknown": "Інше / невідоме"
+  }
+}
