@@ -46,6 +46,13 @@ export default defineConfig({
     {
       name: 'chromium-unauth',
       use: { ...devices['Desktop Chrome'] },
+      // Not for the storageState — for ordering. loginRateLimiter allows 5
+      // POST /auth/login per 15 min per client IP, and on a CI runner every
+      // request shares one key. setup spends 4 of them; auth.unauth.spec then
+      // deliberately burns the rest (wrong password, unknown email, 8-attempt
+      // lockout burst). Run in parallel, the burst could land first and
+      // 429 the role logins, failing every authenticated project.
+      dependencies: ['setup'],
       testMatch: /\.(public|unauth)\.spec\.ts/,
     },
   ],

@@ -16,7 +16,7 @@ on:
 
 jobs:
   backup:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     env:
       # env.ts parses the full env schema on import, and DATABASE_URL /
       # JWT_SECRET / JWT_REFRESH_SECRET are required (no default) even though
@@ -54,7 +54,7 @@ jobs:
 
       - name: Install postgresql-client-17 (PGDG)
         # Neon runs Postgres 17. pg_dump refuses to dump a server newer than
-        # itself, and ubuntu-latest's default postgresql-client is older —
+        # itself, and the runner image's default postgresql-client is older —
         # this fails the very first scheduled run if skipped.
         #
         # Installing the package is NOT enough, which run #4 proved: PGDG puts

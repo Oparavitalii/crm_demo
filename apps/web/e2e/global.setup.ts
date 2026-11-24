@@ -41,6 +41,13 @@ for (const role of ROLES) {
     await page.waitForURL((url) => !url.pathname.includes('/login'), { timeout: 15_000 });
     await expect(page).not.toHaveURL(/\/login/);
 
+    // Dismiss the cookie notice once, as a returning user would have. The
+    // banner is position:fixed along the bottom edge and otherwise covers the
+    // last row of dashboard cards, so clicks there hit the banner instead
+    // (ui-flows "card: Dziennik → /admin/audit-log"). Same key as
+    // src/components/CookieBanner.tsx; storageState carries it to every test.
+    await page.evaluate(() => localStorage.setItem('crm.cookieConsent.v1', 'accepted'));
+
     await page.context().storageState({ path: authFile });
   });
 }

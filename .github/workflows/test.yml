@@ -19,7 +19,7 @@ env:
 
 jobs:
   typecheck:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     steps:
       - uses: actions/checkout@v5
       - uses: actions/setup-node@v5
@@ -30,7 +30,7 @@ jobs:
       - run: npm run typecheck
 
   lint:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     steps:
       - uses: actions/checkout@v5
       - uses: actions/setup-node@v5
@@ -41,7 +41,7 @@ jobs:
       - run: npm run lint
 
   unit-api:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     env:
       DATABASE_URL: postgres://x@y/z
       DATABASE_URL_DIRECT: postgres://x@y/z
@@ -55,7 +55,7 @@ jobs:
       - run: npm run test -w @crm/api
 
   unit-web:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     steps:
       - uses: actions/checkout@v5
       - uses: actions/setup-node@v5
@@ -66,7 +66,7 @@ jobs:
       - run: npm run test -w @crm/web
 
   integration-api:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     needs: [typecheck]
     services:
       postgres:
@@ -98,7 +98,7 @@ jobs:
   e2e:
     # Smoke gate on every PR (unauthenticated flows + admin happy paths); the
     # full suite across all five role projects on push to main.
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     needs: [typecheck]
     timeout-minutes: 30
     services:
@@ -151,6 +151,12 @@ jobs:
       - name: Run migrations
         run: npm run db:migrate -w @crm/api
 
+      # The suite logs in as the e2e-*@crm.test accounts and asserts on the
+      # fixture projects / candidates these two scripts create (both refuse to
+      # run unless NODE_ENV=test). DEMO_MODE stays off on purpose: the demo
+      # seed creates a different (guest) dataset that no spec looks for, and
+      # demo mode changes API behaviour (demo/guard.ts, stubbed clients).
+      # Migration 0058 provides the system actor row the anonymize paths need.
       - name: Seed E2E users and data
         run: |
           node apps/api/scripts/seed-e2e.mjs

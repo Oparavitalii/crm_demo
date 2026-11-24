@@ -221,12 +221,16 @@ describe('candidates.service.hireCandidate (integration)', () => {
       .where(eq(employmentPeriods.candidateId, cand.id));
     expect(periods).toHaveLength(0);
 
-    // Audit log is outside the transaction; it must NOT fire on tx failure.
+    // The success audit row is written after the transaction, so it must NOT
+    // fire on tx failure. The only trail entry is the rejected-attempt journal
+    // row hireCandidate writes on purpose (auditFailedAttempt) — it records the
+    // error code, never a state change.
     const trail = await db
       .select()
       .from(auditLog)
       .where(eq(auditLog.entityId, cand.id));
-    expect(trail).toHaveLength(0);
+    expect(trail.map((r) => r.action)).toEqual(['hire_candidate_failed']);
+    expect(trail[0]?.newValue).toEqual({ error: 'INTERNAL' });
   });
 });
 
@@ -356,11 +360,13 @@ describe('candidates.service.rehireCandidate (integration)', () => {
     expect(periods).toHaveLength(1);
     expect(periods[0]?.dismissedAt).not.toBeNull();
 
-    // Audit happens after the tx — no trail row on failure.
+    // The success audit row happens after the tx, so none on failure — only
+    // the rejected-attempt journal row (rehire delegates to hireCandidate).
     const trail = await db
       .select()
       .from(auditLog)
       .where(eq(auditLog.entityId, cand.id));
-    expect(trail).toHaveLength(0);
+    expect(trail.map((r) => r.action)).toEqual(['hire_candidate_failed']);
+    expect(trail[0]?.newValue).toEqual({ error: 'INTERNAL' });
   });
 });

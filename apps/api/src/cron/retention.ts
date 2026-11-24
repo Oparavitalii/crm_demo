@@ -16,9 +16,11 @@ const INACTIVE_CANDIDATE_YEARS = 3;
 const AUDIT_LOG_YEARS = 5;
 const ANONYMIZE_BATCH_LIMIT = 200;
 
-// Synthetic actor for cron-initiated anonymization. NOT a real user — actorId
-// stays null in the audit row, the `action` prefix and a hashed-system marker
-// make these distinguishable from human-driven anonymizations.
+// Synthetic actor for cron-initiated anonymization. Not a person: the id maps
+// to the inactive system row created by migration 0058_system_actor_user.sql,
+// which exists only to satisfy audit_log.actor_id's foreign key. The
+// anonymize_candidate audit rows carry this id, which makes them
+// distinguishable from human-driven anonymizations.
 const SYSTEM_ACTOR = {
   id: '00000000-0000-0000-0000-000000000000',
   role: 'admin' as const,

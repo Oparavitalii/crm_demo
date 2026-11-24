@@ -27,7 +27,7 @@ test.describe('Communications — Templates', () => {
     await api.delete(`/communications/templates/${body.id}`);
   });
 
-  test('create SMS template is allowed (channel exists) but bulk-send blocks it', async ({ api }) => {
+  test('create SMS template and dry-run a bulk send with it (sends nothing)', async ({ api }) => {
     const name = `E2E-SMS-${uniq()}`;
     const create = await api.post('/communications/templates', {
       data: {
@@ -44,12 +44,17 @@ test.describe('Communications — Templates', () => {
     }
     const templateId = (await create.json()).id;
 
-    // Try to bulk-send → should be blocked because no SMS client
+    // SMS bulk send has been supported since the SMSAPI client landed
+    // (bulk-send.service.ts routes channel 'sms' to its own path), so the old
+    // expectation that it is rejected with template_not_email_channel is gone.
+    // A dry run must succeed and deliver nothing.
     const send = await api.post('/communications/send-bulk', {
       data: { templateId, candidateIds: [], dryRun: true },
     });
-    // Expect 400 with reason template_not_email_channel
-    expect([400, 422]).toContain(send.status());
+    expect(send.status()).toBe(200);
+    const result = await send.json();
+    expect(result.dryRun).toBe(true);
+    expect(result.sentCount).toBe(0);
 
     await api.delete(`/communications/templates/${templateId}`);
   });

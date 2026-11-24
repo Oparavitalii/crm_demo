@@ -28,7 +28,7 @@ on:
 
 jobs:
   drill:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     env:
       # Schema-satisfying placeholders — env.ts parses the WHOLE schema on
       # import, so every required field has to be present even though the

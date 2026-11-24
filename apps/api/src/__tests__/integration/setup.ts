@@ -26,6 +26,16 @@ beforeEach(async () => {
   await db.execute(
     sql.raw(`TRUNCATE ${TABLES.join(', ')} RESTART IDENTITY CASCADE`),
   );
+  // TRUNCATE users also wipes the system actor row that migration
+  // 0058_system_actor_user.sql creates in every environment. Put it back so
+  // each test starts from the same baseline a freshly migrated database has —
+  // the retention cron and consent withdrawal write its id into audit_log.
+  await db.execute(sql`
+    INSERT INTO users (id, email, password_hash, first_name, last_name, role, is_active)
+    VALUES ('00000000-0000-0000-0000-000000000000', 'system@system.invalid', '!',
+            'System', 'Actor', 'readonly', false)
+    ON CONFLICT DO NOTHING
+  `);
 });
 
 afterAll(async () => {
